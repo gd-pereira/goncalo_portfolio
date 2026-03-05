@@ -4,13 +4,13 @@ export default function Home() {
       <div
         className="absolute w-[1322px] h-[931px] max-w-full max-h-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none"
         style={{
-          background: 'radial-gradient(934.8px 658.55px at 50% 50%, rgba(255, 255, 255, 0.03) 0%, rgba(192, 192, 192, 0.515) 25%, rgba(160, 160, 160, 0.7575) 37.5%, rgba(128, 128, 128, 1) 50%, rgba(0, 0, 0, 0) 70%)'
+          background: 'radial-gradient(934.8px 658.55px at 50% 50%, rgba(255, 255, 255, 0.03) 0%, rgba(192, 192, 192, 0.515) 25%, rgba(160, 160, 160, 0.7575) 37.5%, rgba(128, 128, 128, 1) 50%, rgba(0, 0, 0, 0) 60%)'
         }}
       />
 
       <div className="flex flex-col gap-[44px] items-center justify-center relative z-10 w-full max-w-[923px] px-4">
         <h1
-          className="text-center font-normal leading-[1.1] md:leading-[133px] tracking-[-3.5px] text-[13vw] md:text-[140px] whitespace-pre-wrap max-w-full"
+          className="text-center font-normal leading-[1.1] md:leading-[133px] tracking-[-3.5px] text-[13vw] md:text-[130px] whitespace-pre-wrap max-w-full"
           style={{
             background: "linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.5) 100%)",
             WebkitBackgroundClip: "text",
