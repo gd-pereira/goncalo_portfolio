@@ -1,6 +1,9 @@
+import About from "./components/About";
+
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen w-full bg-[#0a0a0a] relative overflow-hidden font-sans">
+    <main className="w-full bg-[#0a0a0a] font-sans">
+      <div className="flex flex-col items-center justify-center min-h-screen relative overflow-hidden">
       <div
         className="absolute w-[1322px] h-[931px] max-w-full max-h-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none"
         style={{
@@ -37,5 +40,9 @@ export default function Home() {
         </button>
       </div>
     </div>
+    <div className="pt-[80px]">
+      <About />
+    </div>
+  </main>
   );
 }
