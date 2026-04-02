@@ -21,9 +21,9 @@ export default function Projects() {
             </div>
             <div className="absolute content-stretch flex flex-col gap-[16px] h-[111.198px] items-start left-[197.33px] top-0 w-[560px]">
               <div className="h-[43.198px] relative shrink-0 w-full">
-                <p className="absolute font-sans font-light leading-[43.2px] left-0 not-italic text-[36px] text-white top-[-0.67px] tracking-[-0.9px] whitespace-nowrap">
+                <a href={projects.items[0].url} target="_blank" rel="noopener noreferrer" className="absolute font-sans font-light leading-[43.2px] left-0 not-italic text-[36px] text-white top-[-0.67px] tracking-[-0.9px] whitespace-nowrap hover:opacity-60 transition-opacity">
                   {projects.items[0].title}
-                </p>
+                </a>
               </div>
               <div className="h-[52px] opacity-50 relative shrink-0 w-full">
                 <p className="absolute font-sans font-light leading-[26px] left-0 not-italic text-[16px] text-white top-[-0.67px] w-[497px]">
@@ -71,9 +71,9 @@ export default function Projects() {
             </div>
             <div className="absolute content-stretch flex flex-col gap-[16px] h-[111.198px] items-start left-[197.33px] top-0 w-[560px]">
               <div className="h-[43.198px] relative shrink-0 w-full">
-                <p className="absolute font-sans font-light leading-[43.2px] left-0 not-italic text-[36px] text-white top-[-0.67px] tracking-[-0.9px] whitespace-nowrap">
+                <a href={projects.items[1].url} target="_blank" rel="noopener noreferrer" className="absolute font-sans font-light leading-[43.2px] left-0 not-italic text-[36px] text-white top-[-0.67px] tracking-[-0.9px] whitespace-nowrap hover:opacity-60 transition-opacity">
                   {projects.items[1].title}
-                </p>
+                </a>
               </div>
               <div className="h-[52px] opacity-50 relative shrink-0 w-full">
                 <p className="absolute font-sans font-light leading-[26px] left-0 not-italic text-[16px] text-white top-[-0.67px] w-[543px]">
@@ -121,9 +121,9 @@ export default function Projects() {
             </div>
             <div className="absolute content-stretch flex flex-col gap-[16px] h-[111.198px] items-start left-[197.33px] top-0 w-[560px]">
               <div className="h-[43.198px] relative shrink-0 w-full">
-                <p className="absolute font-sans font-light leading-[43.2px] left-0 not-italic text-[36px] text-white top-[-0.67px] tracking-[-0.9px] whitespace-nowrap">
+                <a href={projects.items[2].url} target="_blank" rel="noopener noreferrer" className="absolute font-sans font-light leading-[43.2px] left-0 not-italic text-[36px] text-white top-[-0.67px] tracking-[-0.9px] whitespace-nowrap hover:opacity-60 transition-opacity">
                   {projects.items[2].title}
-                </p>
+                </a>
               </div>
               <div className="h-[52px] opacity-50 relative shrink-0 w-full">
                 <p className="absolute font-sans font-light leading-[26px] left-0 not-italic text-[16px] text-white top-[-0.67px] w-[549px]">

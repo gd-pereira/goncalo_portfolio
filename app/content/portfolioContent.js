@@ -39,6 +39,7 @@ export const portfolioContent = {
       {
         number: "01",
         title: "Terminum",
+        url: "https://terminum.ch",
         description:
           "Eine vollständige SaaS-Management-Plattform für Barbershops. Inklusive integriertem Website-Builder für Kundenbuchungen und zentralem Admin-Dashboard.",
         technologies: ["Next.js", "TypeScript", "Tailwind", "Supabase", "Stripe"],
@@ -47,6 +48,7 @@ export const portfolioContent = {
       {
         number: "02",
         title: "The Global Scale",
+        url: "https://the-global-scale.vercel.app/",
         description: "Ein datengetriebenes Charity-Projekt, das globale Einkommensungleichheit veranschaulicht. Entwickelt, um durch greifbare Lebensstandard-Vergleiche Spenden für gemeinnützige Zwecke zu generieren.",
         technologies: ["React", "Javascript", "Vite", "CSS"],
         year: "2025",
@@ -54,7 +56,8 @@ export const portfolioContent = {
       {
         number: "03",
         title: "Le Baromètre du Cœur ",
-        description: "Ein humorvolles und interaktives Quiz, das ursprünglich als  Spassprojekt zum Valentinstag, im Sprachaufenthalt in Frankreich, für die Schule, entwickelt wurde. Die Applikation berechnet mit einem  den Herz-Score der Nutzer durch spielerische Multiple-Choice-Fragen und dynamische Auswertungen.",
+        url: "https://le-barometre-du-coeur.vercel.app/",
+        description: "Ein interaktives Quiz, das als Spassprojekt zum Valentinstag während eines Sprachaufenthalts in Frankreich für die Schule entwickelt wurde. Die App berechnet den Herz-Score der Nutzer durch spielerische Fragen und dynamische Auswertungen.",
         technologies: ["React", "TypeScript", "Vite", "CSS"],
         year: "2025",
       },
