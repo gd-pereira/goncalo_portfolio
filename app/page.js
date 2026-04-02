@@ -7,15 +7,17 @@ import Projects from "./components/Projects";
 export default function Home() {
   return (
     <main className="w-[1322px] bg-[#0a0a0a] font-sans mx-auto">
-      <Navigation />
+      <div className="fade-in-up">
+        <Navigation />
+      </div>
       <Hero />
-      <section id="about">
+      <section id="about" className="fade-in-up fade-in-up-delay-1">
         <About />
       </section>
-      <section id="projects">
+      <section id="projects" className="fade-in-up fade-in-up-delay-1">
         <Projects />
       </section>
-      <section id="contact">
+      <section id="contact" className="fade-in-up fade-in-up-delay-2">
         <Contact />
       </section>
     </main>

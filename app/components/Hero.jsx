@@ -1,4 +1,8 @@
+import { portfolioContent } from "../content/portfolioContent";
+
 export default function Hero() {
+  const { hero } = portfolioContent;
+
   return (
     <section className="relative h-[931.333px] w-full overflow-hidden px-[200px] py-[214px] mt-[17px] mb-[17px]">
       <div
@@ -9,7 +13,7 @@ export default function Hero() {
         }}
       />
 
-      <div className="relative z-10 flex w-[923px] flex-col items-center gap-[44px]">
+      <div className="relative z-10 flex w-[923px] flex-col items-center gap-[44px] fade-in-up fade-in-up-delay-1">
         <div className="h-[402px] w-full">
           <h1
             className="w-[910px] pl-[6px] text-center font-sans text-[120px] font-normal leading-[133px] tracking-[-3.5px]"
@@ -21,21 +25,24 @@ export default function Hero() {
               color: "transparent",
             }}
           >
-            <span className="block">Interface</span>
-            <span className="block">trifft auf</span>
-            <span className="block">solide Logik</span>
+            <span className="block">{hero.lines[0]}</span>
+            <span className="block">{hero.lines[1]}</span>
+            <span className="block">{hero.lines[2]}</span>
           </h1>
         </div>
 
-        <button className="h-[57.833px] w-[256.521px] rounded-full border-[0.667px] border-[rgba(255,255,255,0.05)] bg-[rgba(255,255,255,0.02)] px-[32.667px]">
+        <a
+          href={hero.ctaHref}
+          className="h-[57.833px] w-[256.521px] rounded-full border-[0.667px] border-[rgba(255,255,255,0.05)] bg-[rgba(255,255,255,0.02)] px-[32.667px] inline-flex items-center transition-all duration-300 hover:bg-[rgba(255,255,255,0.08)] hover:border-[rgba(255,255,255,0.2)]"
+        >
           <span className="flex items-center gap-[10px] text-[14.5px] font-normal leading-[22.5px] tracking-[-0.225px] text-white">
-            Meine Projekte ansehen
+            {hero.cta}
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path d="M8 3.33333V12.6667" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               <path d="M12.6667 8L8 12.6667L3.33333 8" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </span>
-        </button>
+        </a>
       </div>
     </section>
   );
