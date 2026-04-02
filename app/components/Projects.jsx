@@ -1,66 +1,114 @@
 import { portfolioContent } from "../content/portfolioContent";
+import { 
+  SiNextdotjs, 
+  SiTypescript, 
+  SiTailwindcss, 
+  SiSupabase, 
+  SiStripe,
+  SiReact,
+  SiJavascript,
+  SiVite,
+  SiCss
+} from "react-icons/si";
+
+const getTechIcon = (techName) => {
+  const iconProps = { className: "w-5 h-5 transition-colors duration-300", "aria-label": techName };
+  switch (techName.toLowerCase()) {
+    case 'next.js':
+      return <SiNextdotjs {...iconProps} className={`${iconProps.className} group-hover/icon:text-white`} />;
+    case 'typescript':
+      return <SiTypescript {...iconProps} className={`${iconProps.className} group-hover/icon:text-[#3178C6]`} />;
+    case 'tailwind':
+      return <SiTailwindcss {...iconProps} className={`${iconProps.className} group-hover/icon:text-[#06B6D4]`} />;
+    case 'supabase':
+      return <SiSupabase {...iconProps} className={`${iconProps.className} group-hover/icon:text-[#3ECF8E]`} />;
+    case 'stripe':
+      return <SiStripe {...iconProps} className={`${iconProps.className} group-hover/icon:text-[#008CDD]`} />;
+    case 'react':
+      return <SiReact {...iconProps} className={`${iconProps.className} group-hover/icon:text-[#61DAFB]`} />;
+    case 'javascript':
+      return <SiJavascript {...iconProps} className={`${iconProps.className} group-hover/icon:text-[#F7DF1E]`} />;
+    case 'vite':
+      return <SiVite {...iconProps} className={`${iconProps.className} group-hover/icon:text-[#646CFF]`} />;
+    case 'css':
+      return <SiCss {...iconProps} className={`${iconProps.className} group-hover/icon:text-[#1572B6]`} />;
+    default:
+      return <span className="text-xs text-white/40">{techName}</span>;
+  }
+};
 
 export default function Projects() {
   const { projects } = portfolioContent;
 
   return (
-    <section className="border-[rgba(255,255,255,0.05)] border-solid border-t-[0.667px] content-stretch flex flex-col items-center pb-[103px] pt-[103.667px] px-[85px] relative w-full">
-      <div className="content-stretch flex flex-col gap-[80px] items-start relative w-[1152px]">
+    <section className="border-[rgba(255,255,255,0.05)] border-solid border-t-[0.667px] content-stretch flex flex-col items-center pb-[120px] pt-[103.667px] px-[85px] relative w-full overflow-hidden">
+      
+      {/* Subtle global depth glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.03)_0%,transparent_70%)] rounded-full pointer-events-none animate-pulse-glow z-0" style={{ animationDuration: '10s' }} />
+
+      <div className="content-stretch flex flex-col gap-[80px] items-start relative w-[1152px] z-10">
         {/* Heading */}
-        <div className="content-stretch flex items-center justify-center relative shrink-0 w-full mb-[24px]">
+        <div className="content-stretch flex items-center justify-center relative shrink-0 w-full mb-[32px]">
           <p className="font-sans font-light leading-[79.2px] not-italic relative shrink-0 text-[72px] text-white tracking-[-1.44px] whitespace-nowrap">
             {projects.heading}
           </p>
         </div>
 
         {/* Project List */}
-        <div className="flex flex-col w-full">
+        <div className="flex flex-col w-full relative">
           {projects.items.map((project, idx) => (
             <div 
               key={idx} 
-              className="group relative border-b border-[#1a1a1a] py-[64px] flex items-center w-full transition-colors duration-300 hover:bg-[rgba(255,255,255,0.01)] px-8 -mx-8 rounded-2xl"
+              className="group relative border-b border-[rgba(255,255,255,0.05)] py-[80px] flex items-center justify-between w-full transition-colors duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] hover:bg-[rgba(255,255,255,0.02)] px-10 -mx-10 rounded-3xl overflow-hidden"
             >
               {/* Number */}
-              <div className="w-[100px] text-white/20 text-[12px] font-light">
+              <div className="w-[80px] shrink-0 text-white/50 text-[14px] font-medium tracking-widest z-20">
                 {project.number}
               </div>
               
-              {/* Title & Desc */}
-              <div className="flex flex-col gap-[20px] w-[450px] z-20">
-                <a 
-                  href={project.url} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="text-[36px] text-white font-light tracking-[-0.9px] leading-[43.2px] hover:text-white/70 transition-colors duration-300"
+              {/* Middle Container (Text & Image) */}
+              <div className="flex-1 relative flex items-center justify-start h-full min-h-[260px]">
+                {/* Title & Desc */}
+                <div className="flex flex-col gap-[20px] w-[400px] z-20 transition-transform duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] translate-x-[160px] group-hover:translate-x-0">
+                  <div className="text-[40px] text-white font-medium tracking-[-0.9px] leading-[43.2px] transition-colors duration-300">
+                    {project.title}
+                  </div>
+                  <p className="text-[16px] text-white/50 leading-[1.8] font-light max-w-[400px]">
+                    {project.description}
+                  </p>
+                </div>
+
+                {/* Hover Reveal Real Image Container */}
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${project.title} live mockup`}
+                  className="absolute right-[-40px] top-1/2 -translate-y-1/2 w-[440px] h-[280px] rounded-xl opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] pointer-events-none group-hover:pointer-events-auto overflow-hidden z-10 shadow-[0_25px_50px_rgba(0,0,0,0.6)] bg-[#111]"
                 >
-                  {project.title}
+                  <img
+                    src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800"
+                    alt={`${project.title} live mockup`}
+                    className="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-105"
+                  />
                 </a>
-                <p className="text-[16px] text-white opacity-50 leading-relaxed">
-                  {project.description}
-                </p>
               </div>
 
               {/* Technologies Badges & Year */}
-              <div className="flex flex-col items-end flex-1 gap-6 z-20">
-                <div className="flex gap-2 flex-wrap justify-end max-w-[320px]">
+              <div className="flex flex-col items-end shrink-0 w-[240px] gap-8 z-20">
+                <div className="flex gap-[16px] flex-wrap justify-end max-w-[340px] text-white/40">
                   {project.technologies.map((tech) => (
-                    <span 
-                      key={tech} 
-                      className="rounded-full px-3 py-1.5 bg-[rgba(255,255,255,0.05)] text-[10px] text-white/60 uppercase tracking-widest border border-transparent"
+                    <div
+                      key={tech}
+                      className="group/icon relative cursor-default"
+                      title={tech}
                     >
-                      {tech}
-                    </span>
+                      {getTechIcon(tech)}
+                    </div>
                   ))}
                 </div>
-                <span className="text-[12px] text-white opacity-20 font-light">
+                <span className="text-[14px] text-white/30 font-light tracking-widest">
                   {project.year}
-                </span>
-              </div>
-
-              {/* Hover Reveal Image (Mockup Placeholder) */}
-              <div className="absolute right-[28%] top-1/2 -translate-y-1/2 w-[320px] h-[200px] bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.08)] rounded-xl opacity-0 group-hover:opacity-100 transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] pointer-events-none overflow-hidden blur-[4px] group-hover:blur-0 translate-x-8 group-hover:translate-x-0 z-10 flex items-center justify-center shadow-2xl backdrop-blur-md">
-                <span className="text-white/20 text-[10px] uppercase tracking-[3px]">
-                  Preview Mockup
                 </span>
               </div>
             </div>
