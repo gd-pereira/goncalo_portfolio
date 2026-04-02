@@ -1,6 +1,6 @@
 export default function About() {
   return (
-    <div className="border-[rgba(255,255,255,0.05)] border-solid border-t-[1px] w-full flex items-center justify-center pt-[160px] pb-[120px] relative">
+    <div className="border-[rgba(255,255,255,0.05)] border-solid border-t-[0.667px] w-full px-[213px] pt-[117px] pb-[116.333px] relative">
       <div className="relative shrink-0 w-[896px]">
         <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative w-full">
           <div className="content-stretch flex flex-col gap-[64px] items-start relative shrink-0 w-full">
