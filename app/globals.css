@@ -62,3 +62,38 @@ html {
     animation: none;
   }
 }
+
+@keyframes pulse-glow {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+}
+
+.animate-pulse-glow {
+  transform-origin: center;
+  animation: pulse-glow 8s ease-in-out infinite;
+}
+
+.animated-underline {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+}
+.animated-underline::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: currentColor;
+  transition: width 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.animated-underline:hover::after {
+  width: 100%;
+}

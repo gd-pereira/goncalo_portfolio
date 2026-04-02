@@ -26,52 +26,63 @@ export default function Contact() {
     },
   ].filter((link) => link.href && link.label);
 
+  const emailLink = contactLinks.find((link) => !link.external && link.label?.includes('@'));
+  const socialLinks = contactLinks.filter((link) => link.external || !link.label?.includes('@'));
+
   return (
-    <section className="w-full border-t-[0.667px] border-[rgba(255,255,255,0.05)] border-solid pt-[0.667px] px-[85px] pb-[446.667px]">
-      <div className="w-[1152px]">
-        <div className="flex flex-col gap-[80px] w-full">
-          <div className="w-full">
-            <h2 className="text-[72px] leading-[79.2px] tracking-[-1.44px] text-white font-sans font-light whitespace-pre-line">
-              {contact?.headingLines?.[0] || ""}{"\n"}
-              {contact?.headingLines?.[1] || ""}
-            </h2>
+    <section className="w-full border-t border-[#1a1a1a] pt-[120px] px-[85px] pb-[160px] flex justify-center">
+      <div className="w-[1152px] flex flex-col gap-[120px]">
+        {/* Top area with Email CTA */}
+        <div className="flex flex-col gap-[16px]">
+          <h2 className="text-[20px] text-white/50 font-sans font-light tracking-wider uppercase mb-4">
+            {contact?.headingLines?.join(" ")}
+          </h2>
+          <div>
+            {emailLink ? (
+              <a 
+                href={emailLink.href} 
+                className="text-[56px] md:text-[72px] text-white font-light tracking-[-2px] animated-underline self-start leading-tight inline-block"
+              >
+                {emailLink.label}
+              </a>
+            ) : (
+              <p className="text-[56px] md:text-[72px] text-white font-light tracking-[-2px] leading-tight">
+                Get in touch
+              </p>
+            )}
+          </div>
+          <p className="max-w-[440px] text-[18px] leading-relaxed text-white/60 font-sans font-light mt-6">
+            {contact?.intro || ""}
+          </p>
+        </div>
+
+        {/* Bottom Details Grid */}
+        <div className="grid grid-cols-2 gap-x-[64px] w-full border-t border-[#1a1a1a] pt-[48px]">
+          <div className="flex flex-row gap-[48px] items-start">
+            {socialLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                target={link.external ? "_blank" : undefined}
+                rel={link.external ? "noreferrer" : undefined}
+                className="text-[18px] leading-[28px] text-white/40 font-sans font-light transition-opacity duration-300 hover:text-white/100"
+              >
+                {link.label}
+              </a>
+            ))}
           </div>
 
-          <div className="grid grid-cols-2 gap-x-[64px] h-[245px] w-full">
-            <div className="flex flex-col">
-              <div className="flex flex-col gap-[48px]">
-                <p className="w-[437px] text-[20px] leading-[32.5px] text-white font-sans font-light">
-                  {contact?.intro || ""}
+          <div className="flex gap-[64px] justify-start">
+            {detailItems.map((item) => (
+              <div key={item.label} className="flex flex-col gap-[12px] opacity-40">
+                <p className="text-[12px] leading-[16px] tracking-[2.4px] uppercase text-white font-sans font-medium opacity-60">
+                  {item.label}
                 </p>
-
-                <div className="flex flex-col gap-[24px] h-[132px]">
-                  {contactLinks.map((link) => (
-                    <a
-                      key={link.label}
-                      href={link.href}
-                      target={link.external ? "_blank" : undefined}
-                      rel={link.external ? "noreferrer" : undefined}
-                      className="h-[28px] opacity-40 text-[18px] leading-[28px] text-white font-sans font-light transition-opacity duration-300 hover:opacity-80"
-                    >
-                      {link.label}
-                    </a>
-                  ))}
-                </div>
+                <p className="text-[14px] leading-[20px] text-white font-sans font-light">
+                  {item.value}
+                </p>
               </div>
-            </div>
-
-            <div className="flex flex-col gap-[32px] opacity-40">
-              {detailItems.map((item) => (
-                <div key={item.label} className="flex flex-col gap-[8px] min-h-[44px]">
-                  <p className="h-[16px] opacity-60 text-[12px] leading-[16px] tracking-[2.4px] uppercase text-white font-sans font-medium">
-                    {item.label}
-                  </p>
-                  <p className="h-[20px] text-[14px] leading-[20px] text-white font-sans font-light">
-                    {item.value}
-                  </p>
-                </div>
-              ))}
-            </div>
+            ))}
           </div>
         </div>
       </div>

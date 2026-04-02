@@ -4,165 +4,68 @@ export default function Projects() {
   const { projects } = portfolioContent;
 
   return (
-    <section className="border-[rgba(255,255,255,0.05)] border-solid border-t-[0.667px] content-stretch flex flex-col items-start pb-[103px] pt-[103.667px] px-[85px] relative w-full">
+    <section className="border-[rgba(255,255,255,0.05)] border-solid border-t-[0.667px] content-stretch flex flex-col items-center pb-[103px] pt-[103.667px] px-[85px] relative w-full">
       <div className="content-stretch flex flex-col gap-[80px] items-start relative w-[1152px]">
-      <div className="content-stretch flex items-center justify-center relative shrink-0">
-        <p className="font-sans font-light leading-[79.2px] not-italic relative shrink-0 text-[72px] text-white tracking-[-1.44px] whitespace-nowrap">
-          {projects.heading}
-        </p>
-      </div>
-      <div className="content-stretch flex flex-col items-start relative shrink-0">
-        <div className="border-[rgba(255,255,255,0.05)] border-solid border-t-[0.667px] content-stretch flex flex-col h-[239.865px] items-start pt-[64.667px] relative shrink-0 w-[1152px]">
-          <div className="h-[111.198px] relative shrink-0 w-full">
-            <div className="absolute content-stretch flex h-[14px] items-start left-0 opacity-20 top-[6px] w-[12.719px]">
-              <p className="font-sans font-light leading-[16px] not-italic relative shrink-0 text-[12px] text-white whitespace-nowrap">
-                {projects.items[0].number}
-              </p>
-            </div>
-            <div className="absolute content-stretch flex flex-col gap-[16px] h-[111.198px] items-start left-[197.33px] top-0 w-[560px]">
-              <div className="h-[43.198px] relative shrink-0 w-full">
-                <a href={projects.items[0].url} target="_blank" rel="noopener noreferrer" className="absolute font-sans font-light leading-[43.2px] left-0 not-italic text-[36px] text-white top-[-0.67px] tracking-[-0.9px] whitespace-nowrap hover:opacity-60 transition-opacity">
-                  {projects.items[0].title}
-                </a>
-              </div>
-              <div className="h-[52px] opacity-50 relative shrink-0 w-full">
-                <p className="absolute font-sans font-light leading-[26px] left-0 not-italic text-[16px] text-white top-[-0.67px] w-[497px]">
-                  {projects.items[0].description}
-                </p>
-              </div>
-            </div>
-            <div className="absolute content-stretch flex flex-col gap-[16px] h-[111.198px] items-start left-[789.33px] top-0 w-[362.667px]">
-              <div className="h-[25.333px] relative shrink-0 w-full">
-                <div className="absolute border-[0.667px] border-[rgba(255,255,255,0.1)] border-solid h-[25.333px] left-0 opacity-40 top-0 w-[57.469px]">
-                  <p className="absolute font-sans font-light leading-[16px] left-[12px] not-italic text-[12px] text-white top-[4.67px] whitespace-nowrap">
-                    {projects.items[0].technologies[0]}
-                  </p>
-                </div>
-                <div className="absolute border-[0.667px] border-[rgba(255,255,255,0.1)] border-solid h-[25.333px] left-[65.47px] opacity-40 top-0 w-[68.021px]">
-                  <p className="absolute font-sans font-light leading-[16px] left-[12px] not-italic text-[12px] text-white top-[4.67px] whitespace-nowrap">
-                    {projects.items[0].technologies[1]}
-                  </p>
-                </div>
-                <div className="absolute border-[0.667px] border-[rgba(255,255,255,0.1)] border-solid h-[25.333px] left-[141.49px] opacity-40 top-0 w-[91.885px]">
-                  <p className="absolute font-sans font-light leading-[16px] left-[12px] not-italic text-[12px] text-white top-[4.67px] whitespace-nowrap">
-                    {projects.items[0].technologies[2]}
-                  </p>
-                </div>
-                <div className="absolute border-[0.667px] border-[rgba(255,255,255,0.1)] border-solid h-[25.333px] left-[241.38px] opacity-40 top-0 w-[58.417px]">
-                  <p className="absolute font-sans font-light leading-[16px] left-[12px] not-italic text-[12px] text-white top-[4.67px] whitespace-nowrap">
-                    {projects.items[0].technologies[3]}
-                  </p>
-                </div>
-              </div>
-              <div className="h-[16px] opacity-20 relative shrink-0 w-full">
-                <p className="absolute font-sans font-light leading-[16px] left-0 not-italic text-[12px] text-white top-[0.67px] whitespace-nowrap">
-                  {projects.items[0].year}
-                </p>
-              </div>
-            </div>
-          </div>
+        {/* Heading */}
+        <div className="content-stretch flex items-center justify-center relative shrink-0 w-full mb-[24px]">
+          <p className="font-sans font-light leading-[79.2px] not-italic relative shrink-0 text-[72px] text-white tracking-[-1.44px] whitespace-nowrap">
+            {projects.heading}
+          </p>
         </div>
-        <div className="border-[rgba(255,255,255,0.05)] border-solid border-t-[0.667px] content-stretch flex flex-col h-[239.865px] items-start pt-[64.667px] relative shrink-0 w-[1152px]">
-          <div className="h-[111.198px] relative shrink-0 w-full">
-            <div className="absolute content-stretch flex h-[14px] items-start left-0 opacity-20 top-[6px] w-[14.698px]">
-              <p className="font-sans font-light leading-[16px] not-italic relative shrink-0 text-[12px] text-white whitespace-nowrap">
-                {projects.items[1].number}
-              </p>
-            </div>
-            <div className="absolute content-stretch flex flex-col gap-[16px] h-[111.198px] items-start left-[197.33px] top-0 w-[560px]">
-              <div className="h-[43.198px] relative shrink-0 w-full">
-                <a href={projects.items[1].url} target="_blank" rel="noopener noreferrer" className="absolute font-sans font-light leading-[43.2px] left-0 not-italic text-[36px] text-white top-[-0.67px] tracking-[-0.9px] whitespace-nowrap hover:opacity-60 transition-opacity">
-                  {projects.items[1].title}
+
+        {/* Project List */}
+        <div className="flex flex-col w-full">
+          {projects.items.map((project, idx) => (
+            <div 
+              key={idx} 
+              className="group relative border-b border-[#1a1a1a] py-[64px] flex items-center w-full transition-colors duration-300 hover:bg-[rgba(255,255,255,0.01)] px-8 -mx-8 rounded-2xl"
+            >
+              {/* Number */}
+              <div className="w-[100px] text-white/20 text-[12px] font-light">
+                {project.number}
+              </div>
+              
+              {/* Title & Desc */}
+              <div className="flex flex-col gap-[20px] w-[450px] z-20">
+                <a 
+                  href={project.url} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-[36px] text-white font-light tracking-[-0.9px] leading-[43.2px] hover:text-white/70 transition-colors duration-300"
+                >
+                  {project.title}
                 </a>
-              </div>
-              <div className="h-[52px] opacity-50 relative shrink-0 w-full">
-                <p className="absolute font-sans font-light leading-[26px] left-0 not-italic text-[16px] text-white top-[-0.67px] w-[543px]">
-                  {projects.items[1].description}
+                <p className="text-[16px] text-white opacity-50 leading-relaxed">
+                  {project.description}
                 </p>
               </div>
-            </div>
-            <div className="absolute content-stretch flex flex-col gap-[16px] h-[111.198px] items-start left-[789.33px] top-0 w-[362.667px]">
-              <div className="h-[25.333px] relative shrink-0 w-full">
-                <div className="absolute border-[0.667px] border-[rgba(255,255,255,0.1)] border-solid h-[25.333px] left-0 opacity-40 top-0 w-[64.021px]">
-                  <p className="absolute font-sans font-light leading-[16px] left-[12px] not-italic text-[12px] text-white top-[4.67px] whitespace-nowrap">
-                    {projects.items[1].technologies[0]}
-                  </p>
+
+              {/* Technologies Badges & Year */}
+              <div className="flex flex-col items-end flex-1 gap-6 z-20">
+                <div className="flex gap-2 flex-wrap justify-end max-w-[320px]">
+                  {project.technologies.map((tech) => (
+                    <span 
+                      key={tech} 
+                      className="rounded-full px-3 py-1.5 bg-[rgba(255,255,255,0.05)] text-[10px] text-white/60 uppercase tracking-widest border border-transparent"
+                    >
+                      {tech}
+                    </span>
+                  ))}
                 </div>
-                <div className="absolute border-[0.667px] border-[rgba(255,255,255,0.1)] border-solid h-[25.333px] left-[72.02px] opacity-40 top-0 w-[64.875px]">
-                  <p className="absolute font-sans font-light leading-[16px] left-[12px] not-italic text-[12px] text-white top-[4.67px] whitespace-nowrap">
-                    {projects.items[1].technologies[1]}
-                  </p>
-                </div>
-                <div className="absolute border-[0.667px] border-[rgba(255,255,255,0.1)] border-solid h-[25.333px] left-[144.9px] opacity-40 top-0 w-[80.625px]">
-                  <p className="absolute font-sans font-light leading-[16px] left-[12px] not-italic text-[12px] text-white top-[4.67px] whitespace-nowrap">
-                    {projects.items[1].technologies[2]}
-                  </p>
-                </div>
-                <div className="absolute border-[0.667px] border-[rgba(255,255,255,0.1)] border-solid h-[25.333px] left-[233.52px] opacity-40 top-0 w-[94.865px]">
-                  <p className="absolute font-sans font-light leading-[16px] left-[12px] not-italic text-[12px] text-white top-[4.67px] whitespace-nowrap">
-                    {projects.items[1].technologies[3]}
-                  </p>
-                </div>
+                <span className="text-[12px] text-white opacity-20 font-light">
+                  {project.year}
+                </span>
               </div>
-              <div className="h-[16px] opacity-20 relative shrink-0 w-full">
-                <p className="absolute font-sans font-light leading-[16px] left-0 not-italic text-[12px] text-white top-[0.67px] whitespace-nowrap">
-                  {projects.items[1].year}
-                </p>
+
+              {/* Hover Reveal Image (Mockup Placeholder) */}
+              <div className="absolute right-[28%] top-1/2 -translate-y-1/2 w-[320px] h-[200px] bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.08)] rounded-xl opacity-0 group-hover:opacity-100 transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] pointer-events-none overflow-hidden blur-[4px] group-hover:blur-0 translate-x-8 group-hover:translate-x-0 z-10 flex items-center justify-center shadow-2xl backdrop-blur-md">
+                <span className="text-white/20 text-[10px] uppercase tracking-[3px]">
+                  Preview Mockup
+                </span>
               </div>
             </div>
-          </div>
+          ))}
         </div>
-        <div className="border-[rgba(255,255,255,0.05)] border-solid border-t-[0.667px] content-stretch flex flex-col h-[239.865px] items-start pt-[64.667px] relative shrink-0 w-[1152px]">
-          <div className="h-[111.198px] relative shrink-0 w-full">
-            <div className="absolute content-stretch flex h-[14px] items-start left-0 opacity-20 top-[6px] w-[14.917px]">
-              <p className="font-sans font-light leading-[16px] not-italic relative shrink-0 text-[12px] text-white whitespace-nowrap">
-                {projects.items[2].number}
-              </p>
-            </div>
-            <div className="absolute content-stretch flex flex-col gap-[16px] h-[111.198px] items-start left-[197.33px] top-0 w-[560px]">
-              <div className="h-[43.198px] relative shrink-0 w-full">
-                <a href={projects.items[2].url} target="_blank" rel="noopener noreferrer" className="absolute font-sans font-light leading-[43.2px] left-0 not-italic text-[36px] text-white top-[-0.67px] tracking-[-0.9px] whitespace-nowrap hover:opacity-60 transition-opacity">
-                  {projects.items[2].title}
-                </a>
-              </div>
-              <div className="h-[52px] opacity-50 relative shrink-0 w-full">
-                <p className="absolute font-sans font-light leading-[26px] left-0 not-italic text-[16px] text-white top-[-0.67px] w-[549px]">
-                  {projects.items[2].description}
-                </p>
-              </div>
-            </div>
-            <div className="absolute content-stretch flex flex-col gap-[16px] h-[111.198px] items-start left-[789.33px] top-0 w-[362.667px]">
-              <div className="h-[25.333px] relative shrink-0 w-full">
-                <div className="absolute border-[0.667px] border-[rgba(255,255,255,0.1)] border-solid h-[25.333px] left-0 opacity-40 top-0 w-[57.469px]">
-                  <p className="absolute font-sans font-light leading-[16px] left-[12px] not-italic text-[12px] text-white top-[4.67px] whitespace-nowrap">
-                    {projects.items[2].technologies[0]}
-                  </p>
-                </div>
-                <div className="absolute border-[0.667px] border-[rgba(255,255,255,0.1)] border-solid h-[25.333px] left-[65.47px] opacity-40 top-0 w-[85.677px]">
-                  <p className="absolute font-sans font-light leading-[16px] left-[12px] not-italic text-[12px] text-white top-[4.67px] whitespace-nowrap">
-                    {projects.items[2].technologies[1]}
-                  </p>
-                </div>
-                <div className="absolute border-[0.667px] border-[rgba(255,255,255,0.1)] border-solid h-[25.333px] left-[159.15px] opacity-40 top-0 w-[48.719px]">
-                  <p className="absolute font-sans font-light leading-[16px] left-[12px] not-italic text-[12px] text-white top-[4.67px] whitespace-nowrap">
-                    {projects.items[2].technologies[2]}
-                  </p>
-                </div>
-                <div className="absolute border-[0.667px] border-[rgba(255,255,255,0.1)] border-solid h-[25.333px] left-[215.86px] opacity-40 top-0 w-[53.333px]">
-                  <p className="absolute font-sans font-light leading-[16px] left-[12px] not-italic text-[12px] text-white top-[4.67px] whitespace-nowrap">
-                    {projects.items[2].technologies[3]}
-                  </p>
-                </div>
-              </div>
-              <div className="h-[16px] opacity-20 relative shrink-0 w-full">
-                <p className="absolute font-sans font-light leading-[16px] left-0 not-italic text-[12px] text-white top-[0.67px] whitespace-nowrap">
-                  {projects.items[2].year}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
       </div>
     </section>
   );
