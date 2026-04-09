@@ -61,7 +61,7 @@ export const portfolioContent = {
       github: "GitHub",
       githubHref: "https://github.com/gd-pereira",
       linkedIn: "LinkedIn",
-      linkedInHref: "https://www.linkedin.com/",
+      linkedInHref: "https://www.linkedin.com/in/gon%C3%A7alo-pereira-3026643b8/",
     },
     details: {
       location: {

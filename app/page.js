@@ -6,10 +6,8 @@ import Projects from "./components/Projects";
 
 export default function Home() {
   return (
-    <main className="w-[1322px] bg-[#0a0a0a] font-sans mx-auto">
-      <div className="fade-in-up">
-        <Navigation />
-      </div>
+    <main className="w-full max-w-[1322px] bg-[#0a0a0a] font-sans mx-auto overflow-hidden">
+      <Navigation />
       <Hero />
       <section id="about" className="fade-in-up fade-in-up-delay-1">
         <About />

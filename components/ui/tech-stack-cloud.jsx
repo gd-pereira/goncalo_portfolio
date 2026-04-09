@@ -28,7 +28,7 @@ export function TechStackCloud({ className }) {
   return (
     <div
       className={cn(
-        "w-full overflow-hidden py-8 [-webkit-mask-image:linear-gradient(to_right,transparent,black_4%,black_96%,transparent)] [mask-image:linear-gradient(to_right,transparent,black_4%,black_96%,transparent)]",
+        "w-full overflow-hidden py-8 md:[-webkit-mask-image:linear-gradient(to_right,transparent,black_4%,black_96%,transparent)] md:[mask-image:linear-gradient(to_right,transparent,black_4%,black_96%,transparent)]",
         className
       )}
     >
@@ -40,22 +40,25 @@ export function TechStackCloud({ className }) {
           from { transform: translateX(0); }
           to { transform: translateX(-50%); }
         }
-        .animate-infinite-scroll {
-          animation: infinite-scroll 40s linear infinite;
-        }
-        .animate-infinite-scroll:hover {
-          animation-play-state: paused;
+        @media (min-width: 768px) {
+          .animate-infinite-scroll {
+            animation: infinite-scroll 40s linear infinite;
+          }
+          .animate-infinite-scroll:hover {
+            animation-play-state: paused;
+          }
         }
       `}</style>
 
-      <div className="flex w-max animate-infinite-scroll items-center gap-10 md:gap-14">
+      <div className="flex flex-wrap justify-center w-full md:w-max animate-infinite-scroll items-center gap-8 md:gap-14 px-4 md:px-0">
+        {/* On mobile: we only need one set of icons, not the duplicated ones, so we slice them or just map the first N */}
         {repeatedIcons.map((Tech, idx) => (
           <div
             key={idx}
-            className="flex cursor-default items-center justify-center text-white/60 transition-opacity duration-300 hover:opacity-100 opacity-60"
+            className={`flex cursor-default items-center justify-center text-white/60 transition-opacity duration-300 hover:opacity-100 opacity-60 ${idx >= techIcons.length ? "hidden md:flex" : ""}`}
           >
             <Tech.icon
-              className="pointer-events-none h-10 w-10 md:h-14 md:w-14"
+              className="pointer-events-none h-8 w-8 md:h-14 md:w-14"
               aria-label={Tech.name}
             />
           </div>

@@ -35,34 +35,34 @@ export default function Contact() {
   };
 
   return (
-    <section className="w-full border-t border-[#1a1a1a] pt-[112px] px-[85px] pb-[112px] flex justify-center">
-      <div className="w-[1152px] flex flex-col gap-[96px]">
+    <section className="w-full border-t border-[#1a1a1a] pt-14 md:pt-[112px] px-4 sm:px-6 lg:px-[85px] pb-14 md:pb-[112px] flex justify-center">
+      <div className="w-full max-w-[1152px] flex flex-col gap-[48px] md:gap-[96px]">
         {/* Top area with Email CTA */}
         <div className="flex flex-col gap-[16px]">
-          <h2 className="text-[20px] text-white/50 font-sans font-light tracking-wider uppercase mb-4">
+          <h2 className="text-[16px] sm:text-[18px] md:text-[20px] text-white/50 font-sans font-light tracking-wider uppercase mb-4">
             {contact?.headingLines?.join(" ")}
           </h2>
           <div>
             {emailLink ? (
               <a 
                 href={emailLink.href} 
-                className="text-[56px] md:text-[72px] text-white font-light tracking-[-2px] animated-underline self-start leading-tight inline-block"
+                className="text-2xl sm:text-3xl md:text-[60px] lg:text-[72px] [overflow-wrap:anywhere] text-white font-extralight tracking-[-0.5px] md:tracking-[-2px] animated-underline self-start leading-tight inline-block"
               >
                 {emailLink.label}
               </a>
             ) : (
-              <p className="text-[56px] md:text-[72px] text-white font-light tracking-[-2px] leading-tight">
+              <p className="text-2xl sm:text-3xl md:text-[60px] lg:text-[72px] [overflow-wrap:anywhere] text-white font-extralight tracking-[-0.5px] md:tracking-[-2px] leading-tight">
                 {contact?.fallbackHeading}
               </p>
             )}
           </div>
-          <p className="max-w-[440px] text-[18px] leading-relaxed text-white/60 font-sans font-light mt-6">
+          <p className="max-w-[440px] text-[15px] sm:text-[16px] md:text-[18px] leading-relaxed text-white/60 font-sans font-light mt-6">
             {contact?.intro || ""}
           </p>
         </div>
 
         {/* Bottom Details Grid */}
-        <div className="grid grid-cols-2 gap-x-[64px] w-full border-t border-[#1a1a1a] pt-[48px]">
+        <div className="flex flex-col md:grid md:grid-cols-2 gap-y-12 md:gap-x-[64px] w-full border-t border-[#1a1a1a] pt-[48px]">
           <div className="flex flex-row gap-[48px] items-start">
             {socialLinks.map((link) => (
               (() => {
@@ -85,7 +85,7 @@ export default function Contact() {
             ))}
           </div>
 
-          <div className="flex gap-[64px] justify-start">
+          <div className="flex flex-col sm:flex-row gap-8 md:gap-[64px] justify-start">
             {detailItems.map((item) => (
               <div key={item.label} className="flex flex-col gap-[12px] opacity-40">
                 <p className="text-[12px] leading-[16px] tracking-[2.4px] uppercase text-white font-sans font-medium opacity-60">
