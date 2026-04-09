@@ -3,9 +3,10 @@ export const portfolioContent = {
     brand: "Gonçalo Pereira",
     ariaLabel: "Hauptnavigation",
     links: {
-      about: "About",
-      projects: "Projects",
-      contact: "Contact",
+      start: "Start",
+      projects: "Projekte",
+      about: "Über mich",
+      contact: "Kontakt",
     },
   },
   hero: {

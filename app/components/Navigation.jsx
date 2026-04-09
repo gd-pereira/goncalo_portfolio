@@ -4,7 +4,7 @@ export default function Navigation() {
   const { navigation } = portfolioContent;
 
   return (
-    <header className="w-full border-b-[0.667px] border-[rgba(255,255,255,0.05)] border-solid pb-[0.667px] px-[69px]">
+    <header className="w-full border-b-[0.667px] border-[rgba(255,255,255,0.05)] border-solid px-[69px]">
       <div className="h-[80px] w-full flex items-center justify-between">
         <div className="w-[1184px] flex items-center justify-between">
           <div className="h-[24px] w-[112.281px] relative">
@@ -13,19 +13,24 @@ export default function Navigation() {
             </p>
           </div>
 
-          <nav className="w-[240.323px] h-[20px] flex items-center gap-[48px]" aria-label={navigation.ariaLabel}>
-            <a href="#about" className="w-[39.146px] h-[20px] opacity-60 transition-opacity duration-300 hover:opacity-100">
-              <span className="block whitespace-nowrap text-[14px] leading-[20px] text-white font-sans font-light pt-[0.33px]">
-                {navigation.links.about}
+          <nav className="h-[20px] flex items-center gap-[36px]" aria-label={navigation.ariaLabel}>
+            <a href="#start" className="h-[20px] opacity-60 transition-opacity duration-300 hover:opacity-100">
+              <span className="block whitespace-nowrap text-[14px] leading-[20px] text-white font-sans font-light">
+                {navigation.links.start}
               </span>
             </a>
-            <a href="#projects" className="w-[53.01px] h-[20px] opacity-60 transition-opacity duration-300 hover:opacity-100">
-              <span className="block whitespace-nowrap text-[14px] leading-[20px] text-white font-sans font-light pt-[0.33px]">
+            <a href="#projects" className="h-[20px] opacity-60 transition-opacity duration-300 hover:opacity-100">
+              <span className="block whitespace-nowrap text-[14px] leading-[20px] text-white font-sans font-light">
                 {navigation.links.projects}
               </span>
             </a>
-            <a href="#contact" className="w-[52.167px] h-[20px] opacity-60 transition-opacity duration-300 hover:opacity-100">
-              <span className="block whitespace-nowrap text-[14px] leading-[20px] text-white font-sans font-light pt-[0.33px]">
+            <a href="#about" className="h-[20px] opacity-60 transition-opacity duration-300 hover:opacity-100">
+              <span className="block whitespace-nowrap text-[14px] leading-[20px] text-white font-sans font-light">
+                {navigation.links.about}
+              </span>
+            </a>
+            <a href="#contact" className="h-[20px] opacity-60 transition-opacity duration-300 hover:opacity-100">
+              <span className="block whitespace-nowrap text-[14px] leading-[20px] text-white font-sans font-light">
                 {navigation.links.contact}
               </span>
             </a>

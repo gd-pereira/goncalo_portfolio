@@ -48,11 +48,11 @@ export function TechStackCloud({ className }) {
         }
       `}</style>
 
-      <div className="flex w-max animate-infinite-scroll items-center gap-14 md:gap-20">
+      <div className="flex w-max animate-infinite-scroll items-center gap-10 md:gap-14">
         {repeatedIcons.map((Tech, idx) => (
           <div
             key={idx}
-            className="flex cursor-default items-center justify-center text-neutral-500 transition-colors duration-300 hover:text-white"
+            className="flex cursor-default items-center justify-center text-white/60 transition-opacity duration-300 hover:opacity-100 opacity-60"
           >
             <Tech.icon
               className="pointer-events-none h-10 w-10 md:h-14 md:w-14"

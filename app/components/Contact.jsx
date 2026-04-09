@@ -35,8 +35,8 @@ export default function Contact() {
   };
 
   return (
-    <section className="w-full border-t border-[#1a1a1a] pt-[120px] px-[85px] pb-[160px] flex justify-center">
-      <div className="w-[1152px] flex flex-col gap-[120px]">
+    <section className="w-full border-t border-[#1a1a1a] pt-[112px] px-[85px] pb-[112px] flex justify-center">
+      <div className="w-[1152px] flex flex-col gap-[96px]">
         {/* Top area with Email CTA */}
         <div className="flex flex-col gap-[16px]">
           <h2 className="text-[20px] text-white/50 font-sans font-light tracking-wider uppercase mb-4">

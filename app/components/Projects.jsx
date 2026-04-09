@@ -14,7 +14,7 @@ import {
 } from "react-icons/si";
 
 const getTechIcon = (techName) => {
-  const iconProps = { className: "w-[22px] h-[22px] transition-colors duration-300 group-hover/icon:text-white group-hover/icon:drop-shadow-[0_0_8px_rgba(255,255,255,0.4)]", "aria-label": techName };
+  const iconProps = { className: "w-[22px] h-[22px] opacity-60 transition-opacity duration-300 group-hover/icon:opacity-100", "aria-label": techName };
   switch (techName.toLowerCase()) {
     case 'next.js':
       return <SiNextdotjs {...iconProps} />;
@@ -39,7 +39,7 @@ const getTechIcon = (techName) => {
     case 'css':
       return <SiCss {...iconProps} />;
     default:
-      return <span className="text-xs text-white/40 tracking-widest uppercase transition-colors duration-300 group-hover/icon:text-white">{techName}</span>;
+      return <span className="text-xs text-white/60 tracking-widest uppercase opacity-60 transition-opacity duration-300 group-hover/icon:opacity-100">{techName}</span>;
   }
 };
 
@@ -47,12 +47,12 @@ export default function Projects() {
   const { projects } = portfolioContent;
 
   return (
-    <section className="border-[rgba(255,255,255,0.05)] border-solid border-t-[0.667px] content-stretch flex flex-col items-center pb-[120px] pt-[103.667px] px-[85px] relative w-full overflow-hidden">
+    <section className="border-[rgba(255,255,255,0.05)] border-solid border-t-[0.667px] content-stretch flex flex-col items-center pb-[112px] pt-[112px] px-[85px] relative w-full overflow-hidden">
       
       {/* Subtle global depth glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.03)_0%,transparent_70%)] rounded-full pointer-events-none animate-pulse-glow z-0" style={{ animationDuration: '10s' }} />
 
-      <div className="content-stretch flex flex-col gap-[80px] items-start relative w-[1152px] z-10">
+      <div className="content-stretch flex flex-col gap-[64px] items-start relative w-[1152px] z-10">
         {/* Heading */}
         <div className="content-stretch flex items-center justify-center relative shrink-0 w-full mb-[32px]">
           <p className="font-sans font-light leading-[79.2px] not-italic relative shrink-0 text-[72px] text-white tracking-[-1.44px] whitespace-nowrap">
@@ -65,7 +65,7 @@ export default function Projects() {
           {projects.items.map((project, idx) => (
             <div
               key={idx}
-              className="group relative border-b border-[rgba(255,255,255,0.05)] py-[80px] flex items-center justify-between w-full transition-colors duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] hover:bg-[rgba(255,255,255,0.02)] px-[80px] -mx-[80px] rounded-3xl overflow-hidden"
+              className="group relative border-b border-[rgba(255,255,255,0.05)] py-[64px] flex items-center justify-between w-full transition-colors duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] hover:bg-[rgba(255,255,255,0.02)] px-[80px] -mx-[80px] rounded-3xl overflow-hidden"
             >
 
               {/* Middle Container (Text & Image) */}
@@ -75,7 +75,7 @@ export default function Projects() {
                   <div className="text-[40px] text-white font-light tracking-[-1px] leading-tight transition-colors duration-300">
                     {project.title}
                   </div>
-                  <p className="text-[16px] text-white/50 leading-[2] font-light max-w-[380px]">
+                  <p className="text-[16px] text-[#A1A1AA] leading-[2] font-light max-w-[380px]">
                     {project.description}
                   </p>
                 </div>
@@ -91,14 +91,15 @@ export default function Projects() {
                   <img
                     src={project.image}
                     alt={`${project.title} ${project.previewLabel}`}
-                    className="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-105"
+                    className="w-full h-full object-cover object-center brightness-[0.55] contrast-110 transition-all duration-500 group-hover:brightness-[0.8] group-hover:contrast-125"
                   />
+                  <div className="pointer-events-none absolute inset-0 bg-black/25 transition-colors duration-500 group-hover:bg-black/10" />
                 </a>
               </div>
 
               {/* Technologies Badges & Year */}
               <div className="flex flex-col items-end shrink-0 w-[240px] gap-8 z-20 transition-transform duration-500 ease-in-out group-hover:translate-x-[20px] ml-[60px]">
-                <div className="flex gap-[16px] flex-wrap justify-end max-w-[340px] text-white/40">
+                <div className="flex gap-[12px] flex-wrap justify-end max-w-[340px] text-white/60">
                   {project.technologies.map((tech) => (
                     <div
                       key={tech}
