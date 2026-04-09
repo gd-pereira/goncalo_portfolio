@@ -15,7 +15,7 @@ export const portfolioContent = {
   },
   about: {
     heading: "Ich entwickle Web-Anwendungen, die technisch solide sind und sich gut anfühlen.",
-    copy: "Hi, ich bin Gonçalo. Wenn ich nicht gerade an performanten Web-Anwendungen schraube, findest du mich meistens im Gym. Für mich haben Training und Programmieren viel gemeinsam: Beides erfordert Disziplin, Ausdauer und den Willen, kontinuierlich besser zu werden. Ein gutes Workout ist für mich der perfekte mentale Ausgleich, um danach mit klarem Kopf und frischen Ideen die nächsten Code-Probleme zu lösen.",
+    copy: "Hi, ich bin Gonçalo. Wenn ich nicht gerade an performanten Web-Anwendungen schraube, findest du mich meistens im Gym. Für mich haben Training und Programmieren viel gemeinsam: Beides erfordert Disziplin, Ausdauer und den Willen, immer besser zu werden. Ein gutes Workout ist für mich der perfekte mentale Ausgleich, um danach mit klarem Kopf und frischen Ideen die nächsten Code-Probleme zu lösen.",
     items: {
       frontend: {
         title: "Frontend",

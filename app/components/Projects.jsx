@@ -71,8 +71,8 @@ export default function Projects() {
               {/* Middle Container (Text & Image) */}
               <div className="flex-1 relative flex items-center justify-start h-full min-h-[260px]">
                 {/* Title & Desc */}
-                <div className="flex flex-col gap-[20px] w-[380px] z-20 transition-transform duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] translate-x-[200px] group-hover:-translate-x-[60px]">
-                  <div className="text-[44px] text-white font-semibold tracking-[-1px] leading-tight transition-colors duration-300">
+                <div className="flex flex-col gap-[20px] w-[380px] z-20 transition-transform duration-500 ease-in-out translate-x-[120px] group-hover:-translate-x-[30px] mr-[60px]">
+                  <div className="text-[40px] text-white font-light tracking-[-1px] leading-tight transition-colors duration-300">
                     {project.title}
                   </div>
                   <p className="text-[16px] text-white/50 leading-[2] font-light max-w-[380px]">
@@ -86,7 +86,7 @@ export default function Projects() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`${project.title} ${project.previewLabel}`}
-                  className="absolute right-[-75px] top-1/2 -translate-y-1/2 w-[420px] h-[260px] rounded-xl opacity-0 scale-90 group-hover:opacity-100 group-hover:scale-100 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] pointer-events-none group-hover:pointer-events-auto overflow-hidden z-10 shadow-[0_30px_60px_rgba(0,0,0,0.8)] bg-[#111]"
+                  className="absolute right-[-110px] top-1/2 -translate-y-1/2 w-[420px] h-[260px] rounded-xl opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all duration-500 ease-in-out pointer-events-none group-hover:pointer-events-auto overflow-hidden z-10 shadow-[0_30px_60px_rgba(0,0,0,0.8)] bg-[#111]"
                 >
                   <img
                     src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800"
@@ -97,7 +97,7 @@ export default function Projects() {
               </div>
 
               {/* Technologies Badges & Year */}
-              <div className="flex flex-col items-end shrink-0 w-[240px] gap-8 z-20 transition-transform duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:translate-x-[40px]">
+              <div className="flex flex-col items-end shrink-0 w-[240px] gap-8 z-20 transition-transform duration-500 ease-in-out group-hover:translate-x-[20px] ml-[60px]">
                 <div className="flex gap-[16px] flex-wrap justify-end max-w-[340px] text-white/40">
                   {project.technologies.map((tech) => (
                     <div

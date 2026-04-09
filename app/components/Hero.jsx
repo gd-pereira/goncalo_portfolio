@@ -4,7 +4,7 @@ export default function Hero() {
   const { hero } = portfolioContent;
 
   return (
-    <section className="relative h-[931.333px] w-full overflow-hidden px-[200px] py-[214px] mt-[17px] mb-[17px]">
+    <section className="relative h-[931.333px] w-full overflow-visible px-[200px] py-[214px] mt-[17px] mb-[17px]">
       <div
         className="pointer-events-none absolute inset-0 animate-pulse-glow"
         style={{
@@ -14,9 +14,9 @@ export default function Hero() {
       />
 
       <div className="relative z-10 flex w-[923px] flex-col items-center gap-[44px] fade-in-up fade-in-up-delay-1">
-        <div className="h-[402px] w-full">
+        <div className="h-auto w-full">
           <h1
-            className="w-[910px] pl-[6px] text-center font-sans text-[120px] font-normal leading-[133px] tracking-[-3.5px]"
+            className="w-[880px] pl-[6px] text-center font-sans text-[114px] font-normal leading-[128px] tracking-[-3.5px]"
             style={{
               background: "linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.7) 100%)",
               WebkitBackgroundClip: "text",
