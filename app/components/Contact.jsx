@@ -1,4 +1,5 @@
 import { portfolioContent } from "../content/portfolioContent";
+import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
 
 export default function Contact() {
   const { contact } = portfolioContent;
@@ -28,6 +29,10 @@ export default function Contact() {
 
   const emailLink = contactLinks.find((link) => !link.external && link.label?.includes('@'));
   const socialLinks = contactLinks.filter((link) => link.external || !link.label?.includes('@'));
+  const socialIcons = {
+    GitHub: FaGithub,
+    LinkedIn: FaLinkedinIn,
+  };
 
   return (
     <section className="w-full border-t border-[#1a1a1a] pt-[120px] px-[85px] pb-[160px] flex justify-center">
@@ -47,7 +52,7 @@ export default function Contact() {
               </a>
             ) : (
               <p className="text-[56px] md:text-[72px] text-white font-light tracking-[-2px] leading-tight">
-                Get in touch
+                {contact?.fallbackHeading}
               </p>
             )}
           </div>
@@ -60,15 +65,23 @@ export default function Contact() {
         <div className="grid grid-cols-2 gap-x-[64px] w-full border-t border-[#1a1a1a] pt-[48px]">
           <div className="flex flex-row gap-[48px] items-start">
             {socialLinks.map((link) => (
+              (() => {
+                const Icon = socialIcons[link.label];
+
+                return (
               <a
                 key={link.label}
                 href={link.href}
                 target={link.external ? "_blank" : undefined}
                 rel={link.external ? "noreferrer" : undefined}
-                className="text-[18px] leading-[28px] text-white/40 font-sans font-light transition-opacity duration-300 hover:text-white/100"
+                className="inline-flex h-13 w-13 items-center justify-center text-white/40 outline-none ring-0 transition-colors duration-300 hover:text-white focus:outline-none focus-visible:outline-none focus:ring-0 focus-visible:ring-0"
+                aria-label={link.label}
+                title={link.label}
               >
-                {link.label}
+                {Icon ? <Icon className="h-7 w-7" aria-hidden="true" /> : null}
               </a>
+                );
+              })()
             ))}
           </div>
 

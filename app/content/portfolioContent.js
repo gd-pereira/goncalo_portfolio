@@ -1,6 +1,7 @@
 export const portfolioContent = {
   navigation: {
     brand: "Gonçalo Pereira",
+    ariaLabel: "Hauptnavigation",
     links: {
       about: "About",
       projects: "Projects",
@@ -14,6 +15,7 @@ export const portfolioContent = {
   },
   about: {
     heading: "Ich entwickle Web-Anwendungen, die technisch solide sind und sich gut anfühlen.",
+    copy: "Hi, ich bin Gonçalo. Wenn ich nicht gerade an performanten Web-Anwendungen schraube, findest du mich meistens im Gym. Für mich haben Training und Programmieren viel gemeinsam: Beides erfordert Disziplin, Ausdauer und den Willen, kontinuierlich besser zu werden. Ein gutes Workout ist für mich der perfekte mentale Ausgleich, um danach mit klarem Kopf und frischen Ideen die nächsten Code-Probleme zu lösen.",
     items: {
       frontend: {
         title: "Frontend",
@@ -37,26 +39,26 @@ export const portfolioContent = {
     heading: "Ausgewählte Projekte",
     items: [
       {
-        number: "01",
         title: "Terminum",
         url: "https://terminum.ch",
+        previewLabel: "Projektvorschau",
         description:
           "Eine vollständige SaaS-Management-Plattform für Barbershops. Inklusive integriertem Website-Builder für Kundenbuchungen und zentralem Admin-Dashboard.",
         technologies: ["Next.js", "TypeScript", "Tailwind", "Supabase", "Stripe"],
         year: "2026",
       },
       {
-        number: "02",
         title: "The Global Scale",
         url: "https://the-global-scale.vercel.app/",
+        previewLabel: "Projektvorschau",
         description: "Ein datengetriebenes Charity-Projekt, das globale Einkommensungleichheit veranschaulicht. Entwickelt, um durch greifbare Lebensstandard-Vergleiche Spenden für gemeinnützige Zwecke zu generieren.",
         technologies: ["React", "Javascript", "Vite", "CSS"],
         year: "2025",
       },
       {
-        number: "03",
         title: "Le Baromètre du Cœur ",
         url: "https://le-barometre-du-coeur.vercel.app/",
+        previewLabel: "Projektvorschau",
         description: "Ein interaktives Quiz, das als Spassprojekt zum Valentinstag während eines Sprachaufenthalts in Frankreich für die Schule entwickelt wurde. Die App berechnet den Herz-Score der Nutzer durch spielerische Fragen und dynamische Auswertungen.",
         technologies: ["React", "TypeScript", "Vite", "CSS"],
         year: "2025",
@@ -64,8 +66,9 @@ export const portfolioContent = {
     ],
   },
   contact: {
-    headingLines: ["Lass uns", "zusammenarbeiten"],
+    headingLines: ["Kontaktieren", "Sie mich"],
     intro: "Ob Projektanfrage oder technischer Austausch, ich freue mich auf deine Nachricht.",
+    fallbackHeading: "Get in touch",
     links: {
       email: "goncalo.dinis.spe@gmail.com",
       emailHref: "mailto:goncalo.dinis.spe@gmail.com",
@@ -78,10 +81,6 @@ export const portfolioContent = {
       location: {
         label: "Standort",
         value: "Zürich, Schweiz",
-      },
-      responseTime: {
-        label: "Antwortzeit",
-        value: "Innerhalb von 24 Stunden",
       },
     },
   },

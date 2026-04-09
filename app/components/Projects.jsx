@@ -8,32 +8,38 @@ import {
   SiReact,
   SiJavascript,
   SiVite,
-  SiCss
+  SiCss,
+  SiNodedotjs,
+  SiPostgresql
 } from "react-icons/si";
 
 const getTechIcon = (techName) => {
-  const iconProps = { className: "w-5 h-5 transition-colors duration-300", "aria-label": techName };
+  const iconProps = { className: "w-[22px] h-[22px] transition-colors duration-300 group-hover/icon:text-white group-hover/icon:drop-shadow-[0_0_8px_rgba(255,255,255,0.4)]", "aria-label": techName };
   switch (techName.toLowerCase()) {
     case 'next.js':
-      return <SiNextdotjs {...iconProps} className={`${iconProps.className} group-hover/icon:text-white`} />;
+      return <SiNextdotjs {...iconProps} />;
     case 'typescript':
-      return <SiTypescript {...iconProps} className={`${iconProps.className} group-hover/icon:text-[#3178C6]`} />;
+      return <SiTypescript {...iconProps} />;
     case 'tailwind':
-      return <SiTailwindcss {...iconProps} className={`${iconProps.className} group-hover/icon:text-[#06B6D4]`} />;
+      return <SiTailwindcss {...iconProps} />;
     case 'supabase':
-      return <SiSupabase {...iconProps} className={`${iconProps.className} group-hover/icon:text-[#3ECF8E]`} />;
+      return <SiSupabase {...iconProps} />;
     case 'stripe':
-      return <SiStripe {...iconProps} className={`${iconProps.className} group-hover/icon:text-[#008CDD]`} />;
+      return <SiStripe {...iconProps} />;
     case 'react':
-      return <SiReact {...iconProps} className={`${iconProps.className} group-hover/icon:text-[#61DAFB]`} />;
+      return <SiReact {...iconProps} />;
     case 'javascript':
-      return <SiJavascript {...iconProps} className={`${iconProps.className} group-hover/icon:text-[#F7DF1E]`} />;
+      return <SiJavascript {...iconProps} />;
     case 'vite':
-      return <SiVite {...iconProps} className={`${iconProps.className} group-hover/icon:text-[#646CFF]`} />;
+      return <SiVite {...iconProps} />;
+    case 'node.js':
+      return <SiNodedotjs {...iconProps} />;
+    case 'sql':
+      return <SiPostgresql {...iconProps} />;
     case 'css':
-      return <SiCss {...iconProps} className={`${iconProps.className} group-hover/icon:text-[#1572B6]`} />;
+      return <SiCss {...iconProps} />;
     default:
-      return <span className="text-xs text-white/40">{techName}</span>;
+      return <span className="text-xs text-white/40 tracking-widest uppercase transition-colors duration-300 group-hover/icon:text-white">{techName}</span>;
   }
 };
 
@@ -61,19 +67,15 @@ export default function Projects() {
               key={idx}
               className="group relative border-b border-[rgba(255,255,255,0.05)] py-[80px] flex items-center justify-between w-full transition-colors duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] hover:bg-[rgba(255,255,255,0.02)] px-[80px] -mx-[80px] rounded-3xl overflow-hidden"
             >
-              {/* Number */}
-              <div className="w-[80px] shrink-0 text-white/50 text-[14px] font-medium tracking-widest z-20">
-                {project.number}
-              </div>
-              
+
               {/* Middle Container (Text & Image) */}
               <div className="flex-1 relative flex items-center justify-start h-full min-h-[260px]">
                 {/* Title & Desc */}
                 <div className="flex flex-col gap-[20px] w-[380px] z-20 transition-transform duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] translate-x-[200px] group-hover:-translate-x-[60px]">
-                  <div className="text-[40px] text-white font-medium tracking-[-0.9px] leading-[43.2px] transition-colors duration-300">
+                  <div className="text-[44px] text-white font-semibold tracking-[-1px] leading-tight transition-colors duration-300">
                     {project.title}
                   </div>
-                  <p className="text-[16px] text-white/50 leading-[1.8] font-light max-w-[380px]">
+                  <p className="text-[16px] text-white/50 leading-[2] font-light max-w-[380px]">
                     {project.description}
                   </p>
                 </div>
@@ -83,12 +85,12 @@ export default function Projects() {
                   href={project.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label={`${project.title} live mockup`}
-                  className="absolute right-[-75px] top-1/2 -translate-y-1/2 w-[420px] h-[260px] rounded-xl opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] pointer-events-none group-hover:pointer-events-auto overflow-hidden z-10 shadow-[0_30px_60px_rgba(0,0,0,0.8)] bg-[#111]"
+                  aria-label={`${project.title} ${project.previewLabel}`}
+                  className="absolute right-[-75px] top-1/2 -translate-y-1/2 w-[420px] h-[260px] rounded-xl opacity-0 scale-90 group-hover:opacity-100 group-hover:scale-100 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] pointer-events-none group-hover:pointer-events-auto overflow-hidden z-10 shadow-[0_30px_60px_rgba(0,0,0,0.8)] bg-[#111]"
                 >
                   <img
                     src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800"
-                    alt={`${project.title} live mockup`}
+                    alt={`${project.title} ${project.previewLabel}`}
                     className="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-105"
                   />
                 </a>

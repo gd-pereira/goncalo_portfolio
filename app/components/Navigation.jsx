@@ -13,7 +13,7 @@ export default function Navigation() {
             </p>
           </div>
 
-          <nav className="w-[240.323px] h-[20px] flex items-center gap-[48px]" aria-label="Main">
+          <nav className="w-[240.323px] h-[20px] flex items-center gap-[48px]" aria-label={navigation.ariaLabel}>
             <a href="#about" className="w-[39.146px] h-[20px] opacity-60 transition-opacity duration-300 hover:opacity-100">
               <span className="block whitespace-nowrap text-[14px] leading-[20px] text-white font-sans font-light pt-[0.33px]">
                 {navigation.links.about}
