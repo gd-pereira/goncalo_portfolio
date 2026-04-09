@@ -89,7 +89,7 @@ export default function Projects() {
                   className="absolute right-[-110px] top-1/2 -translate-y-1/2 w-[420px] h-[260px] rounded-xl opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all duration-500 ease-in-out pointer-events-none group-hover:pointer-events-auto overflow-hidden z-10 shadow-[0_30px_60px_rgba(0,0,0,0.8)] bg-[#111]"
                 >
                   <img
-                    src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800"
+                    src={project.image}
                     alt={`${project.title} ${project.previewLabel}`}
                     className="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-105"
                   />
