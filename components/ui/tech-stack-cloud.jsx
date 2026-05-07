@@ -28,7 +28,7 @@ export function TechStackCloud({ className }) {
   return (
     <div
       className={cn(
-        "w-full overflow-hidden py-8 md:[-webkit-mask-image:linear-gradient(to_right,transparent,black_4%,black_96%,transparent)] md:[mask-image:linear-gradient(to_right,transparent,black_4%,black_96%,transparent)]",
+        "w-screen overflow-hidden py-8 md:[-webkit-mask-image:linear-gradient(to_right,transparent,black_4%,black_96%,transparent)] md:[mask-image:linear-gradient(to_right,transparent,black_4%,black_96%,transparent)]",
         className
       )}
     >

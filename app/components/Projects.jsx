@@ -47,7 +47,7 @@ export default function Projects() {
   const { projects } = portfolioContent;
 
   return (
-    <section className="border-[rgba(255,255,255,0.05)] border-solid border-t-[0.667px] content-stretch flex flex-col items-center pb-14 md:pb-[112px] pt-14 md:pt-[112px] px-4 sm:px-6 lg:px-[85px] relative w-full overflow-hidden md:overflow-visible">
+    <section className="content-stretch flex flex-col items-center pb-14 md:pb-[112px] pt-14 md:pt-[112px] px-4 sm:px-6 lg:px-[85px] relative w-full overflow-hidden md:overflow-visible">
       
       {/* Subtle global depth glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.03)_0%,transparent_70%)] rounded-full pointer-events-none animate-pulse-glow z-0" style={{ animationDuration: '10s' }} />

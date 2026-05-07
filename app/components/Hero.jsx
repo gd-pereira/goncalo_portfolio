@@ -25,7 +25,7 @@ export default function Hero() {
       <div className="relative z-10 flex w-full lg:w-[923px] flex-col items-center gap-8 md:gap-[44px] overflow-visible fade-in-up fade-in-up-delay-1 mt-12 md:mt-0">
         <div className="h-auto w-full overflow-visible">
           <h1
-            className="w-full max-w-[100vw] lg:w-[880px] pl-0 lg:pl-[6px] pb-3 text-center font-sans text-[38px] sm:text-[48px] md:text-[72px] lg:text-[114px] font-normal leading-[1.08] sm:leading-[1.1] md:leading-[1.15] lg:leading-[132px] tracking-[-0.8px] sm:tracking-[-1px] lg:tracking-[-3.5px]"
+            className="w-full max-w-[100vw] lg:w-[880px] pl-0 lg:pl-[6px] pb-6 md:pb-8 text-center font-sans text-[38px] sm:text-[48px] md:text-[72px] lg:text-[114px] font-normal leading-[1.08] sm:leading-[1.1] md:leading-[1.15] lg:leading-[132px] tracking-[-0.8px] sm:tracking-[-1px] lg:tracking-[-3.5px]"
             style={{
               background: "linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.7) 100%)",
               WebkitBackgroundClip: "text",
