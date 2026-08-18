@@ -19,10 +19,10 @@ export default function About() {
             {about.copy}
           </p>
         </div>
+      </div>
 
-        <div className="mt-16 border-t border-[rgba(255,255,255,0.05)] pt-16">
-          <TechStackCloud className="w-full px-0 md:px-[64px]" />
-        </div>
+      <div className="relative left-1/2 mt-16 w-screen -translate-x-1/2">
+        <TechStackCloud className="px-0" />
       </div>
     </section>
   );
