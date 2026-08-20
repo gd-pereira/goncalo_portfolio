@@ -2,8 +2,34 @@ import Link from "next/link";
 import { portfolioContent } from "../content/portfolioContent";
 import { getTechIcon } from "./TechIcon";
 
+function ProjectActions({ project, actions, align = "start" }) {
+  return (
+    <div
+      className={`flex flex-wrap items-center gap-x-5 gap-y-2 ${
+        align === "end" ? "justify-start md:justify-end" : "justify-start"
+      }`}
+    >
+      <Link
+        href={project.href}
+        className="text-[13px] md:text-[14px] text-white/70 font-light tracking-wide animated-underline transition-colors hover:text-white"
+      >
+        {actions.thread}
+      </Link>
+      <a
+        href={project.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-[13px] md:text-[14px] text-white/45 font-light tracking-wide animated-underline transition-colors hover:text-white/80"
+      >
+        {actions.live} →
+      </a>
+    </div>
+  );
+}
+
 export default function Projects() {
   const { projects } = portfolioContent;
+  const { actions } = projects;
   const featured = projects.items.find((item) => item.featured);
   const secondary = projects.items.filter((item) => !item.featured);
 
@@ -23,20 +49,20 @@ export default function Projects() {
 
         <div className="flex flex-col w-full relative">
           {featured && (
-            <Link
-              href={featured.href}
-              aria-label={`${featured.title} ${featured.previewLabel}`}
-              className="group relative w-full"
-            >
-              <div className="flex flex-col md:flex-row md:items-stretch gap-8 md:gap-14 rounded-2xl md:rounded-3xl p-0 md:p-10 transition-colors duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] md:group-hover:bg-[rgba(255,255,255,0.02)]">
-                <div className="relative w-full md:w-[58%] aspect-[16/10] rounded-xl overflow-hidden shadow-[0_24px_40px_rgba(0,0,0,0.6)] bg-[#111] shrink-0">
+            <div className="group relative w-full rounded-2xl md:rounded-3xl p-0 md:p-10 transition-colors duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] md:hover:bg-[rgba(255,255,255,0.02)]">
+              <div className="flex flex-col md:flex-row md:items-stretch gap-8 md:gap-14">
+                <Link
+                  href={featured.href}
+                  aria-label={`${featured.title} — ${actions.thread}`}
+                  className="relative w-full md:w-[58%] aspect-[16/10] rounded-xl overflow-hidden shadow-[0_24px_40px_rgba(0,0,0,0.6)] bg-[#111] shrink-0"
+                >
                   <img
                     src={featured.image}
                     alt={`${featured.title} ${featured.previewLabel}`}
                     className="w-full h-full object-cover object-center brightness-[0.65] contrast-110 transition-all duration-500 group-hover:brightness-[0.85] group-hover:contrast-125"
                   />
                   <div className="pointer-events-none absolute inset-0 bg-black/20 transition-colors duration-500 group-hover:bg-black/10" />
-                </div>
+                </Link>
 
                 <div className="flex flex-col justify-between gap-10 w-full md:w-[42%] md:py-2">
                   <div className="flex flex-col gap-4 md:gap-5">
@@ -45,29 +71,35 @@ export default function Projects() {
                         {featured.featuredLabel}
                       </span>
                     )}
-                    <div className="text-[28px] sm:text-[32px] md:text-[48px] text-white font-light tracking-[-0.5px] md:tracking-[-1px] leading-tight">
+                    <Link
+                      href={featured.href}
+                      className="text-[28px] sm:text-[32px] md:text-[48px] text-white font-light tracking-[-0.5px] md:tracking-[-1px] leading-tight transition-opacity hover:opacity-80 w-fit"
+                    >
                       {featured.title}
-                    </div>
+                    </Link>
                     <p className="text-[15px] md:text-[16px] text-[#A1A1AA] leading-[1.8] md:leading-[1.9] font-light max-w-full md:max-w-[360px]">
                       {featured.description}
                     </p>
                   </div>
 
-                  <div className="flex items-center justify-between gap-6">
-                    <div className="flex gap-[12px] flex-wrap text-white/60">
-                      {featured.technologies.map((tech) => (
-                        <div key={tech} className="group/icon relative cursor-default" title={tech}>
-                          {getTechIcon(tech)}
-                        </div>
-                      ))}
+                  <div className="flex flex-col gap-5">
+                    <div className="flex items-center justify-between gap-6">
+                      <div className="flex gap-[12px] flex-wrap text-white/60">
+                        {featured.technologies.map((tech) => (
+                          <div key={tech} className="group/icon relative cursor-default" title={tech}>
+                            {getTechIcon(tech)}
+                          </div>
+                        ))}
+                      </div>
+                      <span className="text-[14px] text-white/30 font-light tracking-widest shrink-0">
+                        {featured.year}
+                      </span>
                     </div>
-                    <span className="text-[14px] text-white/30 font-light tracking-widest shrink-0">
-                      {featured.year}
-                    </span>
+                    <ProjectActions project={featured} actions={actions} />
                   </div>
                 </div>
               </div>
-            </Link>
+            </div>
           )}
 
           {featured && secondary.length > 0 && (
@@ -84,10 +116,10 @@ export default function Projects() {
               key={project.title}
               className="group relative border-b border-[rgba(255,255,255,0.05)] py-12 md:py-[64px] flex flex-col md:flex-row items-start md:items-center md:justify-between w-full transition-colors duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] hover:bg-[rgba(255,255,255,0.02)] px-0 md:px-[80px] mx-0 md:-mx-[80px] rounded-none md:rounded-3xl overflow-hidden md:overflow-visible"
             >
-              {/* Mobile: image first */}
+              {/* Mobile: image first → thread */}
               <Link
                 href={project.href}
-                aria-label={`${project.title} ${project.previewLabel}`}
+                aria-label={`${project.title} — ${actions.thread}`}
                 className="relative w-full aspect-video rounded-xl overflow-hidden z-10 shadow-[0_24px_40px_rgba(0,0,0,0.6)] bg-[#111] md:hidden"
               >
                 <img
@@ -99,17 +131,18 @@ export default function Projects() {
               </Link>
 
               {/* Content */}
-              <Link
-                href={project.href}
-                className="mt-8 md:mt-0 w-full flex-1 relative flex flex-col md:flex-row items-start md:items-center justify-between gap-10 md:gap-0"
-              >
+              <div className="mt-8 md:mt-0 w-full flex-1 relative flex flex-col md:flex-row items-start md:items-center justify-between gap-10 md:gap-0">
                 <div className="flex flex-col gap-6 md:gap-[20px] w-full md:w-[380px] z-20 transition-transform duration-500 ease-in-out md:translate-x-[120px] md:group-hover:-translate-x-[30px]">
-                  <div className="text-[24px] sm:text-[28px] md:text-[40px] text-white font-light tracking-[-0.5px] md:tracking-[-1px] leading-tight transition-colors duration-300">
+                  <Link
+                    href={project.href}
+                    className="text-[24px] sm:text-[28px] md:text-[40px] text-white font-light tracking-[-0.5px] md:tracking-[-1px] leading-tight transition-opacity hover:opacity-80 w-fit"
+                  >
                     {project.title}
-                  </div>
+                  </Link>
                   <p className="text-[15px] md:text-[16px] text-[#A1A1AA] leading-[1.8] md:leading-[2] font-light max-w-full md:max-w-[380px]">
                     {project.description}
                   </p>
+                  <ProjectActions project={project} actions={actions} />
                 </div>
 
                 <div className="flex flex-col md:items-end shrink-0 w-full md:w-[240px] gap-6 md:gap-8 z-20 transition-transform duration-500 ease-in-out md:group-hover:translate-x-[20px]">
@@ -128,12 +161,12 @@ export default function Projects() {
                     {project.year}
                   </span>
                 </div>
-              </Link>
+              </div>
 
-              {/* Desktop-only hover image */}
+              {/* Desktop-only hover image → thread */}
               <Link
                 href={project.href}
-                aria-label={`${project.title} ${project.previewLabel}`}
+                aria-label={`${project.title} — ${actions.thread}`}
                 className="hidden md:block absolute md:right-[260px] top-1/2 -translate-y-1/2 w-[420px] h-[260px] rounded-xl opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all duration-500 ease-in-out pointer-events-none group-hover:pointer-events-auto overflow-hidden z-10 shadow-[0_30px_60px_rgba(0,0,0,0.8)] bg-[#111]"
               >
                 <img

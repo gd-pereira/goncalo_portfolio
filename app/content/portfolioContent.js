@@ -21,6 +21,10 @@ export const portfolioContent = {
   projects: {
     heading: "Ausgewählte Projekte",
     moreLabel: "Weitere Projekte",
+    actions: {
+      thread: "Thread lesen",
+      live: "Live ansehen",
+    },
     items: [
       {
         title: "Terminum",

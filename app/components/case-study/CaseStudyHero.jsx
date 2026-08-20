@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { getTechIcon } from "../TechIcon";
 import { portfolioContent } from "../../content/portfolioContent";
+import CaseStudyActions from "./CaseStudyActions";
 
 export default function CaseStudyHero({ study }) {
   const author = portfolioContent.navigation.brand;
@@ -38,24 +39,15 @@ export default function CaseStudyHero({ study }) {
           {study.oneLiner}
         </p>
 
-        <div className="flex flex-wrap items-center justify-between gap-4 pt-1">
-          <div className="flex gap-[12px] flex-wrap text-white/60">
-            {study.technologies.map((tech) => (
-              <div key={tech} className="group/icon relative cursor-default" title={tech}>
-                {getTechIcon(tech)}
-              </div>
-            ))}
-          </div>
-
-          <a
-            href={study.liveUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-[14px] text-white/55 font-light tracking-wide animated-underline transition-opacity hover:text-white/90"
-          >
-            {study.liveLabel} →
-          </a>
+        <div className="flex gap-[12px] flex-wrap text-white/60 pt-1">
+          {study.technologies.map((tech) => (
+            <div key={tech} className="group/icon relative cursor-default" title={tech}>
+              {getTechIcon(tech)}
+            </div>
+          ))}
         </div>
+
+        <CaseStudyActions study={study} />
       </div>
     </header>
   );

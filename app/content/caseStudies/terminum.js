@@ -5,6 +5,9 @@ export const terminumCaseStudy = {
   technologies: ["Next.js", "TypeScript", "Tailwind", "Supabase", "Stripe"],
   liveUrl: "https://terminum.ch",
   liveLabel: "Live ansehen",
+  demoUrl: null,
+  demoLabel: "Demo ausprobieren",
+  demoSoonLabel: "Demo — bald verfügbar",
   eyebrow: "Hauptprojekt",
   oneLiner:
     "Eine vollständige SaaS-Management-Plattform für Barbershops — von Buchungen bis Website-Builder.",
