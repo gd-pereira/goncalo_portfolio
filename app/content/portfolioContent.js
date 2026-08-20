@@ -24,6 +24,8 @@ export const portfolioContent = {
     items: [
       {
         title: "Terminum",
+        slug: "terminum",
+        href: "/projects/terminum",
         url: "https://terminum.ch",
         previewLabel: "Projektvorschau",
         image: "/projects/terminum_preview.png",
@@ -36,6 +38,8 @@ export const portfolioContent = {
       },
       {
         title: "The Global Scale",
+        slug: "the-global-scale",
+        href: "/projects/the-global-scale",
         url: "https://the-global-scale.vercel.app/",
         previewLabel: "Projektvorschau",
         image: "/projects/global_scale_preview.png",
@@ -45,6 +49,8 @@ export const portfolioContent = {
       },
       {
         title: "Le Baromètre du Cœur ",
+        slug: "le-barometre-du-coeur",
+        href: "/projects/le-barometre-du-coeur",
         url: "https://le-barometre-du-coeur.vercel.app/",
         previewLabel: "Projektvorschau",
         image: "/projects/barometre_preview.png",

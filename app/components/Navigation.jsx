@@ -1,11 +1,16 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { portfolioContent } from "../content/portfolioContent";
 
 export default function Navigation() {
   const { navigation } = portfolioContent;
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const isHome = pathname === "/";
+  const sectionHref = (hash) => (isHome ? `#${hash}` : `/#${hash}`);
 
   useEffect(() => {
     if (menuOpen) {
@@ -20,29 +25,29 @@ export default function Navigation() {
       <header className="w-full border-b-[0.667px] border-[rgba(255,255,255,0.05)] border-solid px-6 md:px-[69px] relative z-[60]">
         <div className="h-[80px] w-full flex items-center justify-center">
           <div className="w-full max-w-[1184px] flex items-center justify-between">
-            <div className="h-[24px] relative">
+            <Link href="/" className="h-[24px] relative">
               <p className="whitespace-nowrap text-[16px] leading-[24px] tracking-[-0.4px] text-white font-sans font-light">
                 {navigation.brand}
               </p>
-            </div>
+            </Link>
 
             <nav className="hidden md:flex h-[20px] items-center gap-[36px]" aria-label={navigation.ariaLabel}>
-              <a href="#start" className="h-[20px] opacity-60 transition-opacity duration-300 hover:opacity-100">
+              <a href={sectionHref("start")} className="h-[20px] opacity-60 transition-opacity duration-300 hover:opacity-100">
                 <span className="block whitespace-nowrap text-[14px] leading-[20px] text-white font-sans font-light">
                   {navigation.links.start}
                 </span>
               </a>
-              <a href="#projects" className="h-[20px] opacity-60 transition-opacity duration-300 hover:opacity-100">
+              <a href={sectionHref("projects")} className="h-[20px] opacity-60 transition-opacity duration-300 hover:opacity-100">
                 <span className="block whitespace-nowrap text-[14px] leading-[20px] text-white font-sans font-light">
                   {navigation.links.projects}
                 </span>
               </a>
-              <a href="#about" className="h-[20px] opacity-60 transition-opacity duration-300 hover:opacity-100">
+              <a href={sectionHref("about")} className="h-[20px] opacity-60 transition-opacity duration-300 hover:opacity-100">
                 <span className="block whitespace-nowrap text-[14px] leading-[20px] text-white font-sans font-light">
                   {navigation.links.about}
                 </span>
               </a>
-              <a href="#contact" className="h-[20px] opacity-60 transition-opacity duration-300 hover:opacity-100">
+              <a href={sectionHref("contact")} className="h-[20px] opacity-60 transition-opacity duration-300 hover:opacity-100">
                 <span className="block whitespace-nowrap text-[14px] leading-[20px] text-white font-sans font-light">
                   {navigation.links.contact}
                 </span>
@@ -87,16 +92,16 @@ export default function Navigation() {
         </button>
 
         <nav className="flex flex-col items-center gap-10" aria-label="Mobile Navigation">
-          <a href="#start" onClick={() => setMenuOpen(false)} className="opacity-80 hover:opacity-100 transition-opacity">
+          <a href={sectionHref("start")} onClick={() => setMenuOpen(false)} className="opacity-80 hover:opacity-100 transition-opacity">
             <span className="text-[32px] text-white font-sans font-light">{navigation.links.start}</span>
           </a>
-          <a href="#projects" onClick={() => setMenuOpen(false)} className="opacity-80 hover:opacity-100 transition-opacity">
+          <a href={sectionHref("projects")} onClick={() => setMenuOpen(false)} className="opacity-80 hover:opacity-100 transition-opacity">
             <span className="text-[32px] text-white font-sans font-light">{navigation.links.projects}</span>
           </a>
-          <a href="#about" onClick={() => setMenuOpen(false)} className="opacity-80 hover:opacity-100 transition-opacity">
+          <a href={sectionHref("about")} onClick={() => setMenuOpen(false)} className="opacity-80 hover:opacity-100 transition-opacity">
             <span className="text-[32px] text-white font-sans font-light">{navigation.links.about}</span>
           </a>
-          <a href="#contact" onClick={() => setMenuOpen(false)} className="opacity-80 hover:opacity-100 transition-opacity">
+          <a href={sectionHref("contact")} onClick={() => setMenuOpen(false)} className="opacity-80 hover:opacity-100 transition-opacity">
             <span className="text-[32px] text-white font-sans font-light">{navigation.links.contact}</span>
           </a>
         </nav>
