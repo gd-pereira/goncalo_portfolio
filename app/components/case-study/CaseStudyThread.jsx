@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 function ThreadLabel({ children }) {
   return (
     <p className="mb-3 text-[12px] md:text-[13px] uppercase tracking-[0.18em] text-white/55 font-light">{children}</p>
@@ -23,7 +25,7 @@ function Body({ children }) {
 }
 
 export default function CaseStudyThread({ study }) {
-  const { overview, challenges, closing } = study;
+  const { overview, challenges, closing, interviewTease } = study;
   const closingParagraphs = Array.isArray(closing) ? closing : closing ? [closing] : [];
 
   return (
@@ -59,6 +61,15 @@ export default function CaseStudyThread({ study }) {
             <Body key={paragraph}>{paragraph}</Body>
           ))}
         </div>
+      ) : null}
+
+      {interviewTease ? (
+        <Link
+          href="/#contact"
+          className="w-fit text-[17px] md:text-[19px] text-white/70 font-light tracking-[-0.2px] leading-snug transition-colors hover:text-white"
+        >
+          <span className="animated-underline">{interviewTease}</span>
+        </Link>
       ) : null}
     </div>
   );

@@ -63,6 +63,7 @@ export const terminumCaseStudy = {
     "Terminum ist für mich bis heute das Projekt, an dem ich am meisten gewachsen bin. Gerade aus den Herausforderungen ziehe ich meine Learnings.",
     "Genau mit diesem zielstrebigem Mindset arbeite ich weiter, bis die v1 wirklich live geht und die ersten Shops an Bord sind.",
   ],
+  interviewTease: "Aber mehr dazu im Bewerbungsgespräch ;)",
   backLabel: "Projekte",
   contactTease: "Fragen zum Projekt?",
   contactLabel: "Kontakt",
