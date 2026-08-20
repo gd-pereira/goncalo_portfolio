@@ -20,6 +20,7 @@ export const portfolioContent = {
   },
   projects: {
     heading: "Ausgewählte Projekte",
+    moreLabel: "Weitere Projekte",
     items: [
       {
         title: "Terminum",
@@ -30,6 +31,8 @@ export const portfolioContent = {
           "Eine vollständige SaaS-Management-Plattform für Barbershops. Inklusive integriertem Website-Builder für Kundenbuchungen und zentralem Admin-Dashboard.",
         technologies: ["Next.js", "TypeScript", "Tailwind", "Supabase", "Stripe"],
         year: "2026",
+        featured: true,
+        featuredLabel: "Hauptprojekt",
       },
       {
         title: "The Global Scale",
@@ -53,7 +56,6 @@ export const portfolioContent = {
   },
   contact: {
     headingLines: ["Kontaktieren", "Sie mich"],
-    intro: "Ob Projektanfrage oder technischer Austausch, ich freue mich auf deine Nachricht.",
     fallbackHeading: "Get in touch",
     links: {
       email: "goncalo.dinis.spe@gmail.com",

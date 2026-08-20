@@ -45,6 +45,8 @@ const getTechIcon = (techName) => {
 
 export default function Projects() {
   const { projects } = portfolioContent;
+  const featured = projects.items.find((item) => item.featured);
+  const secondary = projects.items.filter((item) => !item.featured);
 
   return (
     <section className="content-stretch flex flex-col items-center pb-14 md:pb-[112px] pt-14 md:pt-[112px] px-4 sm:px-6 lg:px-[85px] relative w-full overflow-hidden md:overflow-visible">
@@ -60,11 +62,69 @@ export default function Projects() {
           </p>
         </div>
 
-        {/* Project List */}
         <div className="flex flex-col w-full relative">
-          {projects.items.map((project, idx) => (
+          {featured && (
+            <a
+              href={featured.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${featured.title} ${featured.previewLabel}`}
+              className="group relative w-full"
+            >
+              <div className="flex flex-col md:flex-row md:items-stretch gap-8 md:gap-14 rounded-2xl md:rounded-3xl p-0 md:p-10 transition-colors duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] md:group-hover:bg-[rgba(255,255,255,0.02)]">
+                <div className="relative w-full md:w-[58%] aspect-[16/10] rounded-xl overflow-hidden shadow-[0_24px_40px_rgba(0,0,0,0.6)] bg-[#111] shrink-0">
+                  <img
+                    src={featured.image}
+                    alt={`${featured.title} ${featured.previewLabel}`}
+                    className="w-full h-full object-cover object-center brightness-[0.65] contrast-110 transition-all duration-500 group-hover:brightness-[0.85] group-hover:contrast-125"
+                  />
+                  <div className="pointer-events-none absolute inset-0 bg-black/20 transition-colors duration-500 group-hover:bg-black/10" />
+                </div>
+
+                <div className="flex flex-col justify-between gap-10 w-full md:w-[42%] md:py-2">
+                  <div className="flex flex-col gap-4 md:gap-5">
+                    {featured.featuredLabel && (
+                      <span className="text-[11px] md:text-[12px] uppercase tracking-[0.22em] text-white/35 font-light">
+                        {featured.featuredLabel}
+                      </span>
+                    )}
+                    <div className="text-[28px] sm:text-[32px] md:text-[48px] text-white font-light tracking-[-0.5px] md:tracking-[-1px] leading-tight">
+                      {featured.title}
+                    </div>
+                    <p className="text-[15px] md:text-[16px] text-[#A1A1AA] leading-[1.8] md:leading-[1.9] font-light max-w-full md:max-w-[360px]">
+                      {featured.description}
+                    </p>
+                  </div>
+
+                  <div className="flex items-center justify-between gap-6">
+                    <div className="flex gap-[12px] flex-wrap text-white/60">
+                      {featured.technologies.map((tech) => (
+                        <div key={tech} className="group/icon relative cursor-default" title={tech}>
+                          {getTechIcon(tech)}
+                        </div>
+                      ))}
+                    </div>
+                    <span className="text-[14px] text-white/30 font-light tracking-widest shrink-0">
+                      {featured.year}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          )}
+
+          {featured && secondary.length > 0 && (
+            <div className="flex items-center gap-4 md:gap-5 py-8 md:py-10">
+              <span className="text-[11px] md:text-[12px] uppercase tracking-[0.22em] text-white/30 font-light shrink-0">
+                {projects.moreLabel}
+              </span>
+              <div className="h-px flex-1 bg-[rgba(255,255,255,0.08)]" aria-hidden="true" />
+            </div>
+          )}
+
+          {secondary.map((project) => (
             <div
-              key={idx}
+              key={project.title}
               className="group relative border-b border-[rgba(255,255,255,0.05)] py-12 md:py-[64px] flex flex-col md:flex-row items-start md:items-center md:justify-between w-full transition-colors duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] hover:bg-[rgba(255,255,255,0.02)] px-0 md:px-[80px] mx-0 md:-mx-[80px] rounded-none md:rounded-3xl overflow-hidden md:overflow-visible"
             >
               {/* Mobile: image first */}

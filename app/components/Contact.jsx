@@ -56,9 +56,6 @@ export default function Contact() {
               </p>
             )}
           </div>
-          <p className="max-w-[440px] text-[15px] sm:text-[16px] md:text-[18px] leading-relaxed text-white/60 font-sans font-light mt-6">
-            {contact?.intro || ""}
-          </p>
         </div>
 
         {/* Bottom Details Grid */}
