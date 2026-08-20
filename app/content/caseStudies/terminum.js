@@ -7,70 +7,61 @@ export const terminumCaseStudy = {
   liveLabel: "Live ansehen",
   demoUrl: null,
   demoLabel: "Demo ausprobieren",
-  demoSoonLabel: "Demo — bald verfügbar",
+  demoSoonLabel: "Demo, bald verfügbar",
   eyebrow: "Hauptprojekt",
   oneLiner:
-    "Eine vollständige SaaS-Management-Plattform für Barbershops — von Buchungen bis Website-Builder.",
+    "Mein erstes grosses SaaS: Eine Plattform, die den kompletten Alltag von Barbershops abdeckt, von der Buchung bis zur eigenen Website.",
   overview: {
     motivation:
-      "Viele Barbershops jonglieren noch mit WhatsApp, Excel und einer veralteten Website. Ich wollte eine Plattform bauen, die den Alltag eines Shops wirklich abbildet: Termine, Team, Services und eine Buchungsseite, die sich wie ein Produkt anfühlt — nicht wie ein Formular-Bausatz.",
+      "Ehrlich gesagt war der stärkste Antrieb für Terminum ganz simpel: Ich wollte endlich ein richtig grosses, echtes Projekt anfangen. Es ging mir anfangs gar nicht zwingend um das 'Was' oder 'Warum', sondern primär darum, zu lernen, wie man mit einer Codebase in dieser Grössenordnung überhaupt umgeht. Dass es dann Barbershops wurden, kam erst danach. Ich habe mir verschiedene Branchen angeschaut und gemerkt, dass dort viele noch komplett analog arbeiten oder Tausende von Franken für 0815-Websites zahlen. Da wusste ich, dass dies das perfekte reale Problem für mein Projekt sein wird.",
     started:
-      "Gestartet Ende 2025 als Nebenprojekt mit dem Ziel, ein echtes Multi-Tenant-SaaS zu verstehen — nicht nur eine Demo-UI. Der Fokus lag früh auf Auth, Datenmodell und einem Admin-Dashboard, das im Alltag hält.",
+      "Ich habe im März 2026 mit dem Projekt gestartet. Mein Fokus lag darauf, ein Multi-Tenant Projekt in der Praxis zu verstehen und nicht immer nur kleine, wertlose Projekte zu bauen. Ehrlicherweise hätte ich so früh in meiner Laufbahn ein Projekt, das dieses Ausmass annimmt, nicht ohne KI hinbekommen. Sie war ein extrem starkes Werkzeug, um Architektur-Entscheidungen zu treffen und effizienter zu arbeiten, mir war aber bewusst, dass ich trotzdem immer verstehen musste was die KI für einen Code rausspuckte, obwohl ich eigentlich immer nur gezielt am prompten war. Das hat mir enorm geholfen, auch wenn ich manche Komponenten trotzdem dreimal komplett neu geschrieben habe, bis ich wirklich zufrieden war.",
     goal:
-      "Ein Shop soll sich in Minuten onboarden, Buchungen live verwalten und eine eigene Buchungswebsite ausspielen können — inklusive Zahlungen über Stripe und einem zentralen Admin für den Betreiber.",
+    "Die Grundidee wuchs schnell zu einem kompletten Betriebssystem für den Shop heran. Ein Barber meldet sich an, richtet seine Services ein und verwaltet alle Termine zentral. Auch das Team wird eingebunden, sodass die Mitarbeiter sich einloggen und selbst managen können. Das absolute Highlight ist aber der integrierte Website-Builder, ähnlich wie bei WordPress, aber speziell auf Barbershops zugeschnitten und von KI unterstützt, damit die eigene Landingpage in Minuten steht. Wenn der Shop möchte, können seine Kunden die Termine direkt bei der Buchung online bezahlen. Auch wird einen der grössten Pain Points der Branche gelöst: sogenannte No-Shows. So bekommen die Barber trotzdem ihr Geld, wenn jemand einfach nicht auftaucht. Dieser Geldfluss läuft über Stripe Connect direkt zum Barber. Das habe ich extra so integriert, damit ich das Geld der Endkunden nie berühre und rechtlich komplett auf der sicheren Seite bin. Dafür durchlaufen die Shops direkt in der App ein eigenes ausführliches Stripe-Onboarding. Zusammen mit dem Admin-Dashboard nimmt die Plattform dem Betreiber am Ende wirklich die komplette Verwaltung ab.",
   },
-  built: [
-    "Multi-Tenant Admin-Dashboard für Shops (Übersicht, Termine, Team, Services, Produkte, Analytics)",
-    "Integrierter Website-Builder für kundenorientierte Buchungsseiten",
-    "Auth, Rollen und Onboarding-Flows für neue Shops",
-    "Stripe-Integration für Abos und Zahlungsflüsse (Test- und Live-Kontext)",
-    "Supabase als Backend für Auth, Datenbank und Realtime-nahe Workflows",
-  ],
   screenshots: [
     {
       src: "/projects/terminum_preview.png",
       alt: "Terminum Admin-Dashboard Übersicht",
-      caption: "Admin-Dashboard — Überblick, Kennzahlen und nächste Termine",
+      caption: "Admin-Dashboard: Überblick, Kennzahlen und nächste Termine",
     },
     {
       src: "/projects/terminum_preview.png",
       alt: "Terminum Buchungen und Kalender",
-      caption: "Buchungs- und Kalenderflüsse — Platzhalter; weitere Screenshots folgen",
+      caption: "Buchungs- und Kalenderflüsse: Platzhalter, weitere Screenshots folgen",
     },
     {
       src: "/projects/terminum_preview.png",
       alt: "Terminum Website-Builder",
-      caption: "Website-Builder für die öffentliche Buchungsseite — Platzhalter",
+      caption: "Website-Builder für die öffentliche Buchungsseite: Platzhalter",
     },
     {
       src: "/projects/terminum_preview.png",
       alt: "Terminum Onboarding",
-      caption: "Onboarding und Shop-Setup — Platzhalter",
+      caption: "Onboarding und Shop-Setup: Platzhalter",
     },
   ],
   challenges: [
     {
-      title: "Multi-Tenant ohne Chaos",
-      body: "Jeder Shop braucht Isolation bei Daten, Auth und Einstellungen. Das Datenmodell und die Row-Level-Security mussten von Anfang an mitgedacht werden — nachträgliche Trennung wäre teuer geworden.",
+      title: "Kundendaten",
+      body: "Jeder Shop braucht absolute Isolation bei den Daten. Als mir richtig bewusst wurde, dass ich hier bald echte Geschäftsdaten verwalte, hatte ich enormen Respekt davor. Die Row-Level-Security (RLS) in Supabase absolut wasserdicht zu machen, hat den Launch zwar verzögert, war mir aber wichtig. (Terminum ist heute leider immer noch nicht live...)",
     },
     {
-      title: "Produkt-UI statt Feature-Liste",
-      body: "Ein Dashboard mit vielen Modulen wirkt schnell überladen. Die Herausforderung war, Dichte zuzulassen, ohne Orientierung zu verlieren: klare Hierarchie, ruhige Typografie und Flows, die einem realen Shop-Alltag folgen.",
+      title: "Der Kampf mit dem Perfektionismus",
+      body: "Mein grösstes Hindernis war ich oft selbst. Aus dem Drang heraus, alles perfekt zu machen, habe ich UI-Elemente und Features immer wieder redesignt, bevor die v1 überhaupt stand. Die Balance zu finden, wann etwas bereit für den Release ist, war ein extrem wichtiges Learning für mich, was ich definitiv in zukünftigen Projekten anwenden werde.",
     },
     {
-      title: "Builder + Runtime",
-      body: "Der Website-Builder muss editierbar und gleichzeitig performant ausgeliefert werden. Trennung zwischen Editor-Erfahrung und der öffentlichen Buchungsseite war entscheidend für Stabilität und Wartbarkeit.",
+      title: "Builder und Runtime",
+      body: "Der Website-Builder musste im Editor einfach zu bedienen sein, aber als Live-Seite pfeilschnell laden. Hier hat mir KI sehr dabei geholfen, meine State-Management-Probleme im Code schneller zu fixen.",
     },
     {
       title: "Zahlungen und Vertrauen",
-      body: "Stripe bringt echte Produktkomplexität: Testmodus, Webhooks, Fehlerzustände. Ziel war, Zahlungsflüsse so zu integrieren, dass Shops den Status verstehen — ohne die Admin-Oberfläche zu verkomplizieren.",
+      body: "Stripe in eine App einzubauen bedeutet echte Komplexität durch Testmodi, Webhooks und Fehlerzustände. Das Ziel war es, diese Zahlungsflüsse so fehlerfrei abzufangen, dass die Nutzer der Plattform blind vertrauen können. Hier bin ich also heute noch doppelt und dreifach so vorsichtig, einfach damit ja keine Fehler passieren.",
     },
   ],
-  learnings: [
-    "Scope früh schneiden: ein starkes Onboarding und ein klares Kern-Dashboard schlagen zehn halbfertige Module.",
-    "Multi-Tenant und Auth sind Architekturentscheidungen — nicht „später dazu“.",
-    "Gutes SaaS fühlt sich im Alltag ruhig an: wenige klare Pfade statt maximaler Optionen.",
-    "Echte Integrationen (Stripe, E-Mail, Domains) erzwingen Produktqualität früher als reine UI-Demos.",
+  closing: [
+    "Terminum ist für mich bis heute das Projekt, an dem ich am meisten gewachsen bin. Gerade aus den Herausforderungen ziehe ich meine Learnings.",
+    "Genau mit diesem zielstrebigem Mindset arbeite ich weiter, bis die v1 wirklich live geht und die ersten Shops an Bord sind.",
   ],
   backLabel: "Projekte",
   contactTease: "Fragen zum Projekt?",

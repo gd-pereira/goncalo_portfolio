@@ -1,6 +1,6 @@
 function ThreadLabel({ children }) {
   return (
-    <p className="mb-3 text-[11px] uppercase tracking-[0.22em] text-white/30 font-light">{children}</p>
+    <p className="mb-3 text-[12px] md:text-[13px] uppercase tracking-[0.18em] text-white/55 font-light">{children}</p>
   );
 }
 
@@ -23,7 +23,8 @@ function Body({ children }) {
 }
 
 export default function CaseStudyThread({ study }) {
-  const { overview, built, challenges, learnings } = study;
+  const { overview, challenges, closing } = study;
+  const closingParagraphs = Array.isArray(closing) ? closing : closing ? [closing] : [];
 
   return (
     <div className="flex flex-col gap-9 md:gap-11">
@@ -34,21 +35,6 @@ export default function CaseStudyThread({ study }) {
             {overview.started ? <Body>{overview.started}</Body> : null}
             {overview.goal ? <Body>{overview.goal}</Body> : null}
           </div>
-        </ThreadBlock>
-      ) : null}
-
-      {built?.length ? (
-        <ThreadBlock label="Was gebaut wurde">
-          <ul className="flex flex-col gap-3.5">
-            {built.map((item) => (
-              <li
-                key={item}
-                className="text-[15px] md:text-[16px] text-[#C4C4C8] leading-[1.85] font-light pl-4 border-l border-[rgba(255,255,255,0.08)]"
-              >
-                {item}
-              </li>
-            ))}
-          </ul>
         </ThreadBlock>
       ) : null}
 
@@ -67,19 +53,12 @@ export default function CaseStudyThread({ study }) {
         </ThreadBlock>
       ) : null}
 
-      {learnings?.length ? (
-        <ThreadBlock label="Learnings">
-          <ul className="flex flex-col gap-3.5">
-            {learnings.map((item) => (
-              <li
-                key={item}
-                className="text-[15px] md:text-[16px] text-[#C4C4C8] leading-[1.85] font-light pl-4 border-l border-[rgba(255,255,255,0.08)]"
-              >
-                {item}
-              </li>
-            ))}
-          </ul>
-        </ThreadBlock>
+      {closingParagraphs.length ? (
+        <div className="flex flex-col gap-5 md:gap-6 pt-1">
+          {closingParagraphs.map((paragraph) => (
+            <Body key={paragraph}>{paragraph}</Body>
+          ))}
+        </div>
       ) : null}
     </div>
   );

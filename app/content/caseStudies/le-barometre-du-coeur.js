@@ -15,11 +15,6 @@ export const leBarometreDuCoeurCaseStudy = {
     goal:
       "Eine kleine App, die in Minuten spielbar ist, Ergebnisse dynamisch auswertet und sich auf dem Handy gut anfühlt.",
   },
-  built: [
-    "Quiz-Flow mit spielerischen Fragen und Auswertungen",
-    "Dynamische Score-Logik und Ergebnisdarstellung",
-    "Responsive UI mit React, TypeScript und Vite",
-  ],
   screenshots: [
     {
       src: "/projects/barometre_preview.png",
@@ -33,10 +28,8 @@ export const leBarometreDuCoeurCaseStudy = {
       body: "Ein Spassprojekt darf chaotisch wirken — der Code nicht. Klare Komponenten und TypeScript halfen, den Flow trotzdem wartbar zu halten.",
     },
   ],
-  learnings: [
-    "Kleine Projekte sind ideal, um Interaktion und Microcopy zu üben.",
-    "Auch kurze Builds profitieren von TypeScript und klaren States.",
-  ],
+  closing:
+    "Ein kleines Projekt, aber genau deshalb gut: Interaktion und Microcopy üben, TypeScript und klare States mitnehmen und trotzdem etwas bauen, das Spaß macht.",
   backLabel: "Projekte",
   contactTease: "Fragen zum Projekt?",
   contactLabel: "Kontakt",

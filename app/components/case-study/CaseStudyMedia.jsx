@@ -33,11 +33,11 @@ export default function CaseStudyMedia({ screenshots, label = "Medien" }) {
   return (
     <section className="w-full border-t border-[rgba(255,255,255,0.05)] pt-10 md:pt-12">
       <div className="mb-5 md:mb-6 flex items-center justify-between gap-4">
-        <h2 className="text-[11px] md:text-[12px] uppercase tracking-[0.22em] text-white/35 font-light">
+        <h2 className="text-[12px] md:text-[13px] uppercase tracking-[0.18em] text-white/55 font-light">
           {label}
         </h2>
         {total > 1 ? (
-          <span className="text-[13px] text-white/30 font-light tracking-wide tabular-nums">
+          <span className="text-[13px] text-white/45 font-light tracking-wide tabular-nums">
             {index + 1} / {total}
           </span>
         ) : null}

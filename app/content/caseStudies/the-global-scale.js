@@ -15,11 +15,6 @@ export const theGlobalScaleCaseStudy = {
     goal:
       "Besucher sollen Einkommensunterschiede intuitiv verstehen und einen konkreten Weg zur Unterstützung finden.",
   },
-  built: [
-    "Interaktive Vergleiche von Lebensstandards",
-    "Datenvisualisierung mit klarer, ruhiger UI",
-    "Frontend mit React und Vite, ausgeliefert über Vercel",
-  ],
   screenshots: [
     {
       src: "/projects/global_scale_preview.png",
@@ -37,10 +32,8 @@ export const theGlobalScaleCaseStudy = {
       body: "Das Interface sollte Betroffenheit erzeugen, ohne reißerisch zu wirken — Typografie, Tempo und Vergleichslogik mussten zusammenpassen.",
     },
   ],
-  learnings: [
-    "Gute Datenprodukte brauchen eine klare Frage — nicht nur Charts.",
-    "Weniger UI-Chrome macht Vergleiche lesbarer und glaubwürdiger.",
-  ],
+  closing:
+    "Am Ende zählt für mich vor allem, dass die Geschichte ohne Erklärung funktioniert. Weniger Chrome, eine klare Frage und ehrliche Vergleiche bringen mehr als noch ein Chart.",
   backLabel: "Projekte",
   contactTease: "Fragen zum Projekt?",
   contactLabel: "Kontakt",
