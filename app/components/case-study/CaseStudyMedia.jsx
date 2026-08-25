@@ -44,14 +44,13 @@ export default function CaseStudyMedia({ screenshots, label = "Medien" }) {
       </div>
 
       <figure className="flex flex-col gap-4">
-        <div className="relative w-full aspect-[16/10] rounded-xl overflow-hidden shadow-[0_24px_40px_rgba(0,0,0,0.6)] bg-[#111]">
+        <div className="relative w-full aspect-[16/10] overflow-hidden rounded-xl bg-[#111] shadow-[0_24px_40px_rgba(0,0,0,0.6)]">
           <img
             key={shot.src + index}
             src={shot.src}
             alt={shot.alt}
-            className="w-full h-full object-cover object-center brightness-[0.65] contrast-110"
+            className="h-full w-full object-contain object-center"
           />
-          <div className="pointer-events-none absolute inset-0 bg-black/20" />
 
           {total > 1 ? (
             <>
