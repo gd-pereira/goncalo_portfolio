@@ -1,11 +1,12 @@
 import Link from "next/link";
 import Navigation from "./components/Navigation";
+import Footer from "./components/Footer";
 
 export default function NotFound() {
   return (
-    <main className="w-full max-w-[1322px] bg-[#0a0a0a] font-sans mx-auto overflow-hidden min-h-screen">
+    <main className="w-full max-w-[1322px] bg-[#0a0a0a] font-sans mx-auto overflow-hidden min-h-screen flex flex-col">
       <Navigation />
-      <div className="flex flex-col items-start gap-6 px-4 sm:px-6 lg:px-[85px] py-20 md:py-28 max-w-[1152px] mx-auto fade-in-up">
+      <div className="flex flex-1 flex-col items-start gap-6 px-4 sm:px-6 lg:px-[85px] py-20 md:py-28 max-w-[1152px] mx-auto fade-in-up">
         <p className="text-[11px] uppercase tracking-[0.22em] text-white/35 font-light">404</p>
         <h1 className="text-[36px] md:text-[48px] text-white font-light tracking-[-1px] leading-tight">
           Seite nicht gefunden
@@ -20,6 +21,7 @@ export default function NotFound() {
           ← Zurück zu Projekte
         </Link>
       </div>
+      <Footer />
     </main>
   );
 }

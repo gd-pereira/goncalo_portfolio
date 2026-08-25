@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import Navigation from "../../components/Navigation";
+import Footer from "../../components/Footer";
 import CaseStudyView from "../../components/case-study/CaseStudyView";
 import { getCaseStudyBySlug, getCaseStudySlugs } from "../../content/caseStudies";
 
@@ -41,6 +42,7 @@ export default async function ProjectCaseStudyPage({ params }) {
       <div className="fade-in-up fade-in-up-delay-1">
         <CaseStudyView study={study} />
       </div>
+      <Footer />
     </main>
   );
 }

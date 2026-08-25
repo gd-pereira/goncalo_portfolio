@@ -1,5 +1,6 @@
 import About from "./components/About";
 import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import Navigation from "./components/Navigation";
 import Projects from "./components/Projects";
@@ -18,6 +19,7 @@ export default function Home() {
       <section id="contact" className="fade-in-up fade-in-up-delay-2">
         <Contact />
       </section>
+      <Footer />
     </main>
   );
 }
