@@ -21,24 +21,29 @@ export const terminumCaseStudy = {
   },
   screenshots: [
     {
-      src: "/projects/terminum_preview.png",
-      alt: "Terminum Admin-Dashboard Übersicht",
-      caption: "Admin-Dashboard: Überblick, Kennzahlen und nächste Termine",
+      src: "/projects/terminum_services.png",
+      alt: "Terminum Service-Katalog mit Preisen und Dauer",
+      caption: "Services: Katalog mit Preisen, Dauer und Bearbeitung",
     },
     {
-      src: "/projects/terminum_preview.png",
-      alt: "Terminum Buchungen und Kalender",
-      caption: "Buchungs- und Kalenderflüsse: Platzhalter, weitere Screenshots folgen",
+      src: "/projects/terminum_bookings.png",
+      alt: "Terminum Buchungsübersicht mit Statusfiltern und Kundentabelle",
+      caption: "Buchungen: Statusfilter, Teamzuweisung und schnelle Aktionen",
     },
     {
-      src: "/projects/terminum_preview.png",
-      alt: "Terminum Website-Builder",
-      caption: "Website-Builder für die öffentliche Buchungsseite: Platzhalter",
+      src: "/projects/terminum_team.png",
+      alt: "Terminum Team-Einladung mit Rollenauswahl",
+      caption: "Team: Einladung mit Rollen (Nur Lesen / Vollzugriff)",
     },
     {
-      src: "/projects/terminum_preview.png",
-      alt: "Terminum Onboarding",
-      caption: "Onboarding und Shop-Setup: Platzhalter",
+      src: "/projects/terminum_builder.png",
+      alt: "Terminum Website-Builder mit Live-Vorschau und Hero-Editor",
+      caption: "Website-Builder: Sections, Live-Preview und Publish",
+    },
+    {
+      src: "/projects/terminum_analytics.png",
+      alt: "Terminum Analysen-Übersicht mit KPIs und Trendchart",
+      caption: "Analysen: Umsatz, Buchungen und Kundentrends im Überblick",
     },
   ],
   challenges: [
