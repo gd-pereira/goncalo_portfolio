@@ -35,6 +35,16 @@ function ProjectActions({ project, actions, align = "start" }) {
       >
         {actions.live} →
       </a>
+      {project.githubUrl ? (
+        <a
+          href={project.githubUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[13px] md:text-[14px] text-white/45 font-light tracking-wide animated-underline transition-colors hover:text-white/80"
+        >
+          {actions.github} →
+        </a>
+      ) : null}
     </div>
   );
 }

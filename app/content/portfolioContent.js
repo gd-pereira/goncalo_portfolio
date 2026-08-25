@@ -24,6 +24,7 @@ export const portfolioContent = {
     actions: {
       thread: "Thread lesen",
       live: "Live ansehen",
+      github: "GitHub",
     },
     items: [
       {
@@ -40,6 +41,20 @@ export const portfolioContent = {
         featured: true,
         featuredLabel: "Hauptprojekt",
         threadEnabled: true,
+      },
+      {
+        title: "Incompetent Chambers",
+        slug: "incompetent-chambers",
+        href: "/projects/incompetent-chambers",
+        url: "https://incompetent-chambers.9983fdc.deploio.app/",
+        githubUrl: "https://github.com/gd-pereira/Incompetent-Chambers",
+        previewLabel: "Projektvorschau",
+        image: "/projects/incompetent_chambers_preview.png",
+        description:
+          "Asymmetrisches Co-op Escape Room aus dem KSH + Renuo Hackathon. Zusammen mit einem Freund an einem Tag geplant und gebaut, inkl. Echtzeit-Sync über WebSockets. Noch nicht fertig und kann Bugs haben, war aber ein cooler Stress-Test unter Zeitdruck.",
+        technologies: ["React", "TypeScript", "Vite", "Tailwind", "Node.js"],
+        year: "2026",
+        threadEnabled: false,
       },
       {
         title: "The Global Scale",
