@@ -48,7 +48,8 @@ export const portfolioContent = {
         url: "https://the-global-scale.vercel.app/",
         previewLabel: "Projektvorschau",
         image: "/projects/global_scale_preview.png",
-        description: "Ein datengetriebenes Charity-Projekt, das globale Einkommensungleichheit veranschaulicht. Entwickelt, um durch greifbare Lebensstandard-Vergleiche Spenden für gemeinnützige Zwecke zu generieren.",
+        description:
+          "Eine Web-App, die zeigt, wie ungleich Einkommen weltweit verteilt sind. Über einfache Vergleiche zum eigenen Lebensstandard soll Lust entstehen, für gute Zwecke zu spenden.",
         technologies: ["React", "Javascript", "Vite", "CSS"],
         year: "2025",
         threadEnabled: false,
@@ -60,7 +61,8 @@ export const portfolioContent = {
         url: "https://le-barometre-du-coeur.vercel.app/",
         previewLabel: "Projektvorschau",
         image: "/projects/barometre_preview.png",
-        description: "Ein interaktives Quiz, das als Spassprojekt zum Valentinstag während eines Sprachaufenthalts in Frankreich für die Schule entwickelt wurde. Die App berechnet den Herz-Score der Nutzer durch spielerische Fragen und dynamische Auswertungen.",
+        description:
+          "Ein kleines Valentins-Quiz aus meinem Sprachaufenthalt in Frankreich, für die Schule gebaut, eher zum Spass. Am Ende gibt’s einen Herz-Score aus ein paar Fragen.",
         technologies: ["React", "TypeScript", "Vite", "CSS"],
         year: "2025",
         threadEnabled: false,
