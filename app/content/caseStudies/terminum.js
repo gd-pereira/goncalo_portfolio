@@ -5,7 +5,7 @@ export const terminumCaseStudy = {
   technologies: ["Next.js", "TypeScript", "Tailwind", "Supabase", "Stripe"],
   liveUrl: "https://terminum.ch",
   liveLabel: "Live ansehen",
-  demoUrl: null,
+  demoUrl: "https://demo.terminum.ch/?k=f2ecfc5110d49d3e56672fa980a9ad0cedfdea8a029e54622722a92e64c31482",
   demoLabel: "Demo ausprobieren",
   demoSoonLabel: "Demo, bald verfügbar",
   eyebrow: "Hauptprojekt",
